@@ -1,4 +1,4 @@
-# ZombieSurvival64
+# Zombie Survival 64
 N64 adaptation of the Garry's Mod gamemode "Zombie Survival" programmed in C++
 
 Created using the Pyrite64 Engine as well as Libdragon
@@ -34,3 +34,15 @@ Copyrights go to William Moodhe, creator and founder of the actual Garry's Mod g
 
 - Rigidbody physics simulation for props and cading
 
+
+## NOTE
+- Since I don't own the gamemode, and the original gamemode is open source, you are free to use, distribute, modify this project and it's ROM anywhere.
+
+- The original gamemode license held by William Moodhe still applies, please read at https://github.com/JetBoom/zombiesurvival
+
+- Cartridges of this game may be sold on Ebay, estimated price is around 35 USD at the moment to cover manufacturing expense & tax (internal hardware and plastic shelling).
+  for moral and legal sake, this is a non-profit and will be adjusted to accomodate price fluctuation.
+
+**This is an unofficial third-party title with no affiliation with Nintendo obviously. 
+
+Zombie Survival 64 is a project designed to be played with unmodified hardware or on a emulator, it does not utilize or cause security circumvention or reverse engineering.**
