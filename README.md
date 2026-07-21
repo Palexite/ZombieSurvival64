@@ -8,11 +8,12 @@ Currently in early stages
 Copyrights go to William Moodhe, creator and founder of the actual Garry's Mod gamemode.
 
 ## Original Credits
-William "Jetboom" Moodhe - Original Founder and lead programmer
-Austin "Little Nemo" Killey - Original dynamic music
+- William "Jetboom" Moodhe - Original Founder and lead programmer
+- Austin "Little Nemo" Killey - Original dynamic music
 
 ## N64 credits
-Peter "Palexite" Panagopoulos - Lead programmer, artist
+- Peter "Palexite" Panagopoulos - Lead programmer, artist
+- Johnny Moe - Level Design
 
 ## (Potential) Features
 - Can be emulated on realistic emulators like Ares, or played on the actual Nintendo 64 hardware if you desire.
