@@ -7,7 +7,7 @@ Currently in early stages
 
 Copyrights go to William Moodhe, creator and founder of the actual Garry's Mod gamemode.
 
-## Original Credits
+## Original Credits - https://github.com/JetBoom/zombiesurvival
 - William "Jetboom" Moodhe - Original Founder and lead programmer
 - Austin "Little Nemo" Killey - Original dynamic music
 
@@ -36,13 +36,13 @@ Copyrights go to William Moodhe, creator and founder of the actual Garry's Mod g
 
 
 ## NOTE
-- Since I don't own the gamemode, and the original gamemode is open source, you are free to use, distribute, modify this project and it's ROM anywhere.
+- Since I don't own the gamemode, and the original is open source, you are free to use, distribute, modify this project and it's ROM anywhere.
 
-- The original gamemode license held by William Moodhe still applies, please read at https://github.com/JetBoom/zombiesurvival
+- The original gamemode license held by William Moodhe still applies, please read at https://github.com/JetBoom/zombiesurvival/blob/master/LICENSE
 
 - Cartridges of this game may be sold on Ebay, estimated price is around 35 USD at the moment to cover manufacturing expense & tax (internal hardware and plastic shelling).
-  for moral and legal sake, this is a non-profit and will be adjusted to accomodate price fluctuation.
+this is a non-profit and will be adjusted to accomodate price fluctuation.
 
-**This is an unofficial third-party title with no affiliation with Nintendo obviously. 
+This project is an unofficial third-party title with no affiliation with Nintendo obviously. 
 
-Zombie Survival 64 is a project designed to be played with unmodified hardware or on a emulator, it does not utilize or cause security circumvention or reverse engineering.**
+It is designed to be played with unmodified hardware or on a emulator, it does not utilize or cause security circumvention or reverse engineering.
