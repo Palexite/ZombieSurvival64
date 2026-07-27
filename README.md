@@ -31,7 +31,7 @@ So I made this to pay respect to our fellow modders that have cultivated this ma
 Another reason is that I wanted a game I could play with my colleagues since we got bored with GoldenEye multiplayer on the N64.
 
 ## (Potential) Features
-- Can be emulated on realistic emulators like Ares, or played on the actual Nintendo 64 hardware if you desire.
+- Can be emulated on realistic emulators like Ares, or played on the actual Nintendo 64 hardware if you desire (requires memory expansion pack).
 
 - original art designed specifically to suit the N64 limitations. Music replication, models, textures, were handcrafted specifically for this game.
   
@@ -53,13 +53,13 @@ Another reason is that I wanted a game I could play with my colleagues since we 
 ## NOTE
 - as a result of the Pyrite64 engine's weight, This game requires the N64 expansion pack. using it without will result in corruption or crashing
 
-- Since I don't own the gamemode, and the original is open source, you are free to use, distribute, modify this project and it's ROM anywhere.
-
-- The original gamemode license held by William Moodhe still applies, please read at https://github.com/JetBoom/zombiesurvival/blob/master/LICENSE
+- Personally speaking, you are allowed to copy, distribute and modify the ROM and create your own versions with the readily available source provided in this repo. YOU ARE NOT allowed to profit off of this software as it is completely free. for the game contents however, it is still technically copyright in respects to William Moodhe.
+Rule of thumb is to not be an asshole with it or monetize it in unspecified ways according to the license without author permission. It's a short read, so please read it.
+https://github.com/JetBoom/zombiesurvival/blob/master/LICENSE
 
 - Cartridges of this game may be sold on Ebay, estimated price is around 35 USD at the moment to cover manufacturing expense & tax (internal hardware and plastic shelling).
 this is a non-profit and will be adjusted to accomodate price fluctuation.
 
-This project is an unofficial third-party title with no affiliation with Nintendo obviously. 
+- This project is an unofficial third-party title with no affiliation with Nintendo obviously. 
 
-It is designed to be played with unmodified hardware or on a emulator, it does not utilize or cause security circumvention or reverse engineering.
+- This project is designed to be played with unmodified hardware or on a emulator, it does not utilize or cause security circumvention or reverse engineering.
