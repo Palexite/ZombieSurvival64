@@ -8,12 +8,27 @@ Currently in early stages
 Copyrights go to William Moodhe, creator and founder of the actual Garry's Mod gamemode.
 
 ## Original Credits - https://github.com/JetBoom/zombiesurvival
-- William "Jetboom" Moodhe - Original Founder and lead programmer
-- Austin "Little Nemo" Killey - Original dynamic music
+- William "Jetboom" Moodhe - Original Founder, Lead Programmer
+- Austin "Little Nemo" Killey - Original Music Composer
 
 ## N64 credits
-- Peter "Palexite" Panagopoulos - Lead programmer, artist
-- Johnny Moe - Level Design
+- Peter "Palexite" Panagopoulos - Lead Programmer, Artist
+- Johnny Moe - Level Designer
+
+## The Game
+Garry's Mod Zombie Survival is a gamemode of teamwork. Humans have to defend up to 3 sigils from a swarm of zombies for 6 waves, using the environment around them to their advantage.
+Every wave there is a break, where humans have a brief time to bring furniture, tear apart doors, and nail them to create their own improvised barricades.
+
+When you die, you turn into a zombie to take revenge against your teamates that failed you, and potentially redeeming yourself after killing 3 to 4 people.
+
+The gamemode started development in november of 2006, released early 2007. Millions of players stop by, thousands have helped develop, with hundreds still playing today.
+It often features player counts of 50-120 players in one server, creating one action-packed comeradic adventure.
+
+## About
+One reason I am making this is because I had loved the Garry's Mod Zombie Survival community since 2021, and have always wished to have some kind of standalone creation in regards to it, even if it's not official.
+So I made this to pay respect to our fellow modders that have cultivated this masterpiece.
+
+Another reason is that I wanted a game I could play with my colleagues since we got bored with GoldenEye multiplayer on the N64.
 
 ## (Potential) Features
 - Can be emulated on realistic emulators like Ares, or played on the actual Nintendo 64 hardware if you desire.
@@ -36,6 +51,8 @@ Copyrights go to William Moodhe, creator and founder of the actual Garry's Mod g
 
 
 ## NOTE
+- as a result of the Pyrite64 engine's weight, This game requires the N64 expansion pack. using it without will result in corruption or crashing
+
 - Since I don't own the gamemode, and the original is open source, you are free to use, distribute, modify this project and it's ROM anywhere.
 
 - The original gamemode license held by William Moodhe still applies, please read at https://github.com/JetBoom/zombiesurvival/blob/master/LICENSE
