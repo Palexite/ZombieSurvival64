@@ -1,0 +1,17 @@
+{
+  "collLayer0": "World",
+  "collLayer1": "Props",
+  "collLayer2": "Humans",
+  "collLayer3": "Zombies",
+  "collLayer4": "Layer 4",
+  "collLayer5": "Layer 5",
+  "collLayer6": "Layer 6",
+  "collLayer7": "Layer 7",
+  "name": "ZombieSurvival",
+  "pathEmu": "C:\\Users\\peter\\OneDrive\\preservation\\ares-windows-x64\\ares-v148\\ares.exe",
+  "pathN64Inst": "",
+  "romName": "ZS64",
+  "sceneIdLastOpened": 2,
+  "sceneIdOnBoot": 2,
+  "sceneIdOnReset": 2
+}
