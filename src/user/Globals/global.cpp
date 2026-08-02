@@ -7,15 +7,15 @@ namespace P64::User {
 
   uint8_t portCount = 1;
   uint8_t flags = 0;
-
   // 1 = Human, 0 = Zombie
-  
   uint8_t portTeam = 1;
   uint8_t mapSelected = 0;
 
   mapDef MapsDefined[16] = {};
-
   std::map<char, uint16_t> HumanAnimsDef = {};
+
+
+
 
   uint16_t GetHumanAnimationByName(char animName) {
       if(User::HumanAnimsDef.at(animName) != 0) {
@@ -51,7 +51,7 @@ User::HumanAnimsDef[*"INTRO_MELEE2_1"] = 1;
   {
         SetupMaps();
 
-        rdpq_font_t *font = rdpq_font_load("rom:/fonts/remingtonnoiseless.font64");
+        rdpq_font_t *font = rdpq_font_load("rom:/fonts/RemingtonNoiseless_Med_1.font64");
 
         rdpq_fontstyle_t normal = {};
         normal.color = RGBA16(31, 31, 31, 1);

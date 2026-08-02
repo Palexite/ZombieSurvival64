@@ -1,5 +1,6 @@
 #pragma once
 
+#include <string>
 #include <map>
 
 namespace P64::User {
@@ -27,7 +28,7 @@ extern mapDef MapsDefined[16];
 
 extern std::map<char, uint16_t> HumanAnimsDef;
 
-uint16_t GetHumanAnimationByName(char animName);
+uint16_t GetHumanAnimationByName(char* animName);
 
 
 
