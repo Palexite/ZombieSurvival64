@@ -29,10 +29,11 @@ It often features player counts of 50-120 players in one server, creating one ac
 One reason I am making this is because I had loved the Garry's Mod Zombie Survival community since 2021, and have always wished to have some kind of standalone creation in regards to it, even if it's not official.
 So I made this to pay respect to our fellow modders that have cultivated this masterpiece.
 
-Another reason is that I wanted a game I could play with my colleagues since we got bored with GoldenEye multiplayer on the N64.
+Another reason is that I wanted a game I could play with my colleagues since we got bored with Golden Eye multiplayer on the N64.
 
 ## (Potential) Features
 - Can be emulated on realistic emulators like Ares, or played on the actual Nintendo 64 hardware if you desire (requires memory expansion pack).
+  (NOTE: some emulators do not work. This is an engine limitation and there's nothing I can do)
 
 - original art designed specifically to suit the N64 limitations. Music replication, models, textures, were handcrafted specifically for this game.
   
