@@ -34,9 +34,12 @@ uint16_t Items[4];
 
 namespace P64::Gameplay {
 
-    std::map<uint16_t, HumanInfo> humansInfo;
-    std::map<uint16_t, ZombieInfo> zombiesInfo;
+
+
+
+    extern std::map<uint16_t, HumanInfo> humansInfo;
+    extern std::map<uint16_t, ZombieInfo> zombiesInfo;
 
     // Used to determine which port to assign the next created player character.
-    int8_t CurrentPortCount = 0;
+    extern int8_t CurrentPortCount;
 }
