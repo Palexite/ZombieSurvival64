@@ -90,7 +90,7 @@
         "fogColorMode": 0,
         "fogMax": 0.0,
         "fogMin": 0.0,
-        "lightMode": 0,
+        "lightMode": 1,
         "name": "PTX Opaque"
       }
     ],
@@ -258,7 +258,7 @@
                 "setPrim": true
               },
               "model": 2928086680125825780,
-              "previewAnimName": "intro2"
+              "previewAnimName": "<Default Pose>"
             },
             "id": 10,
             "name": "Model (Animated)",
@@ -296,7 +296,7 @@
                 "setPrim": true
               },
               "model": 13123155256661489537,
-              "previewAnimName": "intro2"
+              "previewAnimName": "<Default Pose>"
             },
             "id": 10,
             "name": "Model (Animated)",
@@ -319,9 +319,9 @@
           0.9890836477279663
         ],
         "scale": [
-          0.2200002521276474,
-          0.2200000286102295,
-          0.2200002521276474
+          1.0,
+          1.0,
+          1.0
         ],
         "selectable": true,
         "uuid": 2071829609,
@@ -447,6 +447,8 @@
               "fov": 65.0,
               "mode": 1,
               "near": 100.0,
+              "orthoSize": 300.0,
+              "projection": 0,
               "vpOffset": [
                 0,
                 0
@@ -465,7 +467,7 @@
         "name": "Camera",
         "pos": [
           0.0,
-          69.09109497070313,
+          107.90505981445313,
           299.6194763183594
         ],
         "propOverrides": {},
@@ -491,13 +493,13 @@
           {
             "data": {
               "color": [
-                1.0,
-                1.0,
+                0.5412371158599854,
+                0.6878520846366882,
                 1.0,
                 0.5137255191802979
               ],
               "index": 0,
-              "size": 128.0,
+              "size": 2048.0,
               "type": 2
             },
             "id": 2,
@@ -509,21 +511,21 @@
         "name": "New Object",
         "pos": [
           0.0,
-          0.0,
-          0.0
+          130.16976928710938,
+          30.120906829833984
         ],
         "propOverrides": {},
         "proportionalScale": false,
         "rot": [
+          0.848145067691803,
           0.0,
           0.0,
-          0.0,
-          1.0
+          0.5297640562057495
         ],
         "scale": [
           1.0,
-          1.0,
-          1.0
+          1.0000009536743164,
+          1.0000011920928955
         ],
         "selectable": true,
         "uuid": 1109576824,
@@ -534,155 +536,43 @@
         "components": [
           {
             "data": {
-              "culling": false,
-              "layerIdx": 0,
-              "material": {
-                "depth": 0,
-                "env": [
-                  0.0,
-                  0.0,
-                  0.0,
-                  0.0
-                ],
-                "fresnel": 0,
-                "fresnelColor": [
-                  0.0,
-                  0.0,
-                  0.0,
-                  0.0
-                ],
-                "lighting": false,
-                "prim": [
-                  0.0,
-                  0.0,
-                  0.0,
-                  0.0
-                ],
-                "setDepth": false,
-                "setEnv": false,
-                "setFresnel": false,
-                "setLighting": false,
-                "setPrim": false
-              },
-              "meshFilter": "",
-              "model": 16584744887529404465
+              "color": [
+                0.5412371158599854,
+                0.6878520846366882,
+                1.0,
+                0.5137255191802979
+              ],
+              "index": 0,
+              "size": 2048.0,
+              "type": 2
             },
-            "id": 1,
-            "name": "Model (Static)",
-            "uuid": 14619507011029573175
-          },
-          {
-            "data": {
-              "maskRead": 1,
-              "maskWrite": 255,
-              "meshFilter": "",
-              "modelUUID": 16584744887529404465
-            },
-            "id": 4,
-            "name": "Collision-Mesh",
-            "uuid": 14404529107274855191
+            "id": 2,
+            "name": "Light",
+            "uuid": 7597722351275874653
           }
         ],
         "enabled": true,
         "name": "New Object",
         "pos": [
           0.0,
-          0.0,
-          0.0
+          130.16976928710938,
+          136.42955017089844
         ],
         "propOverrides": {},
         "proportionalScale": false,
         "rot": [
+          0.848145067691803,
           0.0,
           0.0,
-          0.0,
-          1.0
+          0.5297640562057495
         ],
         "scale": [
           1.0,
-          1.0,
-          1.0
+          1.0000009536743164,
+          1.0000011920928955
         ],
         "selectable": true,
-        "uuid": 181183982,
-        "uuidPrefab": 0
-      },
-      {
-        "children": [],
-        "components": [
-          {
-            "data": {
-              "culling": false,
-              "layerIdx": 0,
-              "material": {
-                "depth": 0,
-                "env": [
-                  0.0,
-                  0.0,
-                  0.0,
-                  0.0
-                ],
-                "fresnel": 0,
-                "fresnelColor": [
-                  0.0,
-                  0.0,
-                  0.0,
-                  0.0
-                ],
-                "lighting": false,
-                "prim": [
-                  0.0,
-                  0.0,
-                  0.0,
-                  0.0
-                ],
-                "setDepth": false,
-                "setEnv": false,
-                "setFresnel": false,
-                "setLighting": false,
-                "setPrim": false
-              },
-              "meshFilter": "",
-              "model": 16584744887529404465
-            },
-            "id": 1,
-            "name": "Model (Static)",
-            "uuid": 14619507011029573175
-          },
-          {
-            "data": {
-              "maskRead": 1,
-              "maskWrite": 255,
-              "meshFilter": "",
-              "modelUUID": 16584744887529404465
-            },
-            "id": 4,
-            "name": "Collision-Mesh",
-            "uuid": 14404529107274855191
-          }
-        ],
-        "enabled": true,
-        "name": "New Object",
-        "pos": [
-          0.0,
-          0.0,
-          0.0
-        ],
-        "propOverrides": {},
-        "proportionalScale": false,
-        "rot": [
-          0.0,
-          0.0,
-          0.0,
-          1.0
-        ],
-        "scale": [
-          1.0,
-          1.0,
-          1.0
-        ],
-        "selectable": true,
-        "uuid": 281272403,
+        "uuid": 1163451451,
         "uuidPrefab": 0
       }
     ],
