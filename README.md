@@ -14,6 +14,7 @@ Copyrights go to William Moodhe, creator and founder of the actual Garry's Mod g
 ## N64 credits
 - Peter "Palexite" Panagopoulos - Lead Programmer, Artist
 - Johnny Moe - Level Designer
+- HailToDodongo - Engine founder, bug fixes
 
 ## The Game
 Garry's Mod Zombie Survival is a gamemode of teamwork. Humans have to defend up to 3 sigils from a swarm of zombies for 6 waves, using the environment around them to their advantage.
@@ -61,6 +62,6 @@ Rule of thumb is to not be an asshole with it or monetize it in unspecified ways
 - Cartridges of this game may be sold on Ebay, estimated price is around 35 USD at the moment to cover manufacturing expense & tax (internal hardware and plastic shelling).
 this is a non-profit and will be adjusted to accomodate price fluctuation.
 
-- This project is an unofficial third-party title with no affiliation with Nintendo obviously. 
+- This project is an unofficial third-party title with no affiliation with Nintendo or FacePunch. 
 
 - This project is designed to be played with unmodified hardware or on a emulator, it does not utilize or cause security circumvention or reverse engineering.
