@@ -36,7 +36,7 @@ So I made this to pay respect to our fellow modders that have cultivated this ma
 Another reason is that I wanted a game I could play with my colleagues since we got bored with Golden Eye multiplayer on the N64.
 
 ## (Potential) Features
-- Can be emulated on realistic emulators like Ares, or played on the actual Nintendo 64 hardware if you desire (requires memory expansion pack).
+- Can be emulated on realistic emulators like Ares, or played on the actual Nintendo 64 hardware if you desire.
   (NOTE: some emulators do not work. This is an engine limitation and there's nothing I can do)
 
 - original art designed specifically to suit the N64 limitations. Music replication, models, textures, were handcrafted specifically for this game.
@@ -56,6 +56,10 @@ Another reason is that I wanted a game I could play with my colleagues since we 
 - Rigidbody physics simulation for props and cading
 
 
+## Specs
+- 64MB cartridge
+- 8MB of RAM (Requires memory expansion)
+
 ## NOTE
 - as a result of the Pyrite64 engine's weight, This game requires the N64 expansion pack. using it without will result in corruption or crashing
 
@@ -70,3 +74,5 @@ this is a non-profit and will be adjusted to accomodate price fluctuation.
 - This project is an unofficial third-party title with no affiliation with Nintendo or FacePunch. 
 
 - This project is designed to be played with unmodified hardware or on a emulator, it does not utilize or cause security circumvention or reverse engineering.
+
+
