@@ -14,6 +14,7 @@ Copyrights go to William Moodhe, creator and founder of the actual Garry's Mod g
 ## N64 credits
 - Peter "Palexite" Panagopoulos - Lead Programmer, Artist
 - Johnny Moe - Level Designer
+- HailToDodongo - Engine founder, bug fixes
 
 ## The Game
 Garry's Mod Zombie Survival is a gamemode of teamwork. Humans have to defend up to 3 sigils from a swarm of zombies for 6 waves, using the environment around them to their advantage.
@@ -28,10 +29,11 @@ It often features player counts of 50-120 players in one server, creating one ac
 One reason I am making this is because I had loved the Garry's Mod Zombie Survival community since 2021, and have always wished to have some kind of standalone creation in regards to it, even if it's not official.
 So I made this to pay respect to our fellow modders that have cultivated this masterpiece.
 
-Another reason is that I wanted a game I could play with my colleagues since we got bored with GoldenEye multiplayer on the N64.
+Another reason is that I wanted a game I could play with my colleagues since we got bored with Golden Eye multiplayer on the N64.
 
 ## (Potential) Features
 - Can be emulated on realistic emulators like Ares, or played on the actual Nintendo 64 hardware if you desire (requires memory expansion pack).
+  (NOTE: some emulators do not work. This is an engine limitation and there's nothing I can do)
 
 - original art designed specifically to suit the N64 limitations. Music replication, models, textures, were handcrafted specifically for this game.
   
@@ -61,6 +63,6 @@ Rule of thumb is to not be an asshole with it or monetize it in unspecified ways
 - Cartridges of this game may be sold on Ebay, estimated price is around 35 USD at the moment to cover manufacturing expense & tax (internal hardware and plastic shelling).
 this is a non-profit and will be adjusted to accomodate price fluctuation.
 
-- This project is an unofficial third-party title with no affiliation with Nintendo obviously. 
+- This project is an unofficial third-party title with no affiliation with Nintendo or FacePunch. 
 
 - This project is designed to be played with unmodified hardware or on a emulator, it does not utilize or cause security circumvention or reverse engineering.
