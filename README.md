@@ -1,6 +1,7 @@
 
 # Zombie Survival 64
-<img width="128" height="32" alt="zslogo" src="https://github.com/user-attachments/assets/9c55df18-5f50-4dfe-8aba-b449e694c659" />
+<img width="1024" height="238" alt="N64ZSLogo" src="https://github.com/user-attachments/assets/62c78843-4edc-4286-8f8d-b62a34072a36" />
+
 
 N64 adaptation of the Garry's Mod gamemode "Zombie Survival" programmed in C++
 
