@@ -1,8 +1,11 @@
 #include "script/userScript.h"
 #include "scene/sceneManager.h"
-#include "gameplay.h"
-#include "global.h"
+#include "globals/gameplay.h"
+#include "globals/global.h"
 #include "string"
+#include "scene/components/charBody.h"
+#include "scene/components/animModel.h"
+#include "scene/components/Camera.h"
 #include <stdint.h>
 
 namespace P64::Script::CD3F67733C77127D
@@ -24,39 +27,54 @@ namespace P64::Script::CD3F67733C77127D
     float ScreenH = 480;
     float ScreenX = 0;
     float ScreenY = 0;
+    // 1 - CameraSpawned,
+    uint8_t setupFlags = 0;
+    AssetRef<sprite_t> hpBar;
 
-    // Put your arguments and runtime values bound to an object here.
-    // If you need them to show up in the editor, add a [[P64::Name("...")]] attribute.
-    //
-    // Types that can be set in the editor:
-    // - uint8_t, int8_t, uint16_t, int16_t, uint32_t, int32_t
-    // - float
-    // - AssetRef<sprite_t>
-    // - ObjectRef
-    //
-    // For unsigned integers (uint8_t/uint16_t/uint32_t) you can add a
-    // [[P64::Bitmask("0=Fire, 1=Water, 2=Earth")]] attribute to edit them as a
-    // named multi-select of bits instead of a plain number.
-    //
-    // Other types can be used but are not exposed in the editor.
+    Comp::AnimModel *animModel; 
+    Comp::Camera *camera;
+    Comp::CharBody *charBody; 
+
+    Comp::AnimModel *HandModel;
   );
 
-  // The following functions are called by the engine at different points in the object's lifecycle.
-  // If you don't need a specific function you can remove it.
+
 
   void init(Object& obj, Data *data)
-  {
+  { 
     HumanInfo hi = {};
     hi.HP = 100;
     hi.BA = 0;
     hi.CurrentItem = 0;
     hi.isDead = false;
     hi.moveSpeed = 100;
-    hi.PortNumber =  Gameplay::CurrentPortCount += 1;
+    hi.PortNumber = Gameplay::CurrentPortCount += 1;
     
     Gameplay::humansInfo.insert({obj.id, hi});
     data->Vars = &Gameplay::humansInfo.at(obj.id);
-    
+
+        data->animModel = obj.getComponent<Comp::AnimModel>(0);
+    data->charBody = obj.getComponent<Comp::CharBody>();
+    data->camera = obj.getComponent<Comp::Camera>();
+
+// Setting up screen space for us depending on the number of ports selected
+
+
+
+    if(User::portCount == 1) {
+      data->ScreenW = 640;
+      data->ScreenH = 480;
+    } else if(User::portCount == 2) {
+      data->ScreenH = 480;
+      data->ScreenW = 320;
+    } else if(User::portCount == 3 || User::portCount == 4) {
+      data->ScreenH = 240;
+      data->ScreenW = 320;
+    }
+
+    sprite_t *hpBarTex = (sprite_t*)AssetManager::getByIndex("tex/white.sprite"_asset);
+    data->hpBar.ptr = hpBarTex;
+
     // initialization, this is called once when the object spawns
   }
 
@@ -65,45 +83,94 @@ namespace P64::Script::CD3F67733C77127D
     // clean-up, this is called when the object gets deleted
   }
 
+
+  void InputUpdates(Object& obj, Data *data, float deltaTime) {
+//data->Vars->PortNumber
+    joypad_buttons_t buttons = joypad_get_buttons_held(static_cast<joypad_port_t>(0));
+
+              fm_vec3_t Axis = fm_vec3_t({0, 1, 0});
+         fm_quat_t newRot = fm_quat_t({obj.rot.x, obj.rot.y, obj.rot.z, obj.rot.w});
+
+fm_vec3_t inputVel = fm_vec3_t({0, 0, 0});
+    if(buttons.c_up) {
+          inputVel += (obj.rot * fm_vec3_t{0, 0, -1});
+    } 
+    
+    if(buttons.c_right) {
+          //inputVel += (obj.rot * fm_vec3_t{-1, 0, 0});
+          fm_quat_rotate(&obj.rot, &newRot, &Axis, -1 * deltaTime);
+    } 
+
+    if(buttons.c_down) {
+          inputVel += (obj.rot * fm_vec3_t{0, 0, 1});
+          
+    }  else if(buttons.c_left) {
+          //inputVel += (obj.rot * fm_vec3_t{1, 0, 0});
+
+          
+
+          fm_quat_rotate(&obj.rot, &newRot, &Axis, 1 * deltaTime);
+    }
+
+
+          data->charBody->getBody().inputVelocity = inputVel;
+          data->charBody->getBody().moveAndSlide(deltaTime);
+  }
+
+
+
+
   void update(Object& obj, Data *data, float deltaTime)
   {
-    // this is called once every frame, put your main logic here
+    InputUpdates(obj, data, deltaTime);
+    auto viewOff = fm_vec3_t({0, 120, 0});
+      data->camera->camera.setPosRot(viewOff + obj.pos, obj.rot);
   }
 
   void fixedUpdate(Object& obj, Data *data, float fixedDeltaTime)
   {
+    if(!data->setupFlags) {
+      
+    }
     // this is called on the fixed physics timestep before collision/physics are stepped
   }
 
     void DrawHealthBar(Object& obj, Data *data, float deltaTime) {
-
-
           char hp_str[6];
-        snprintf(hp_str, sizeof(hp_str), "%u", (unsigned)data->Vars->HP);
+      rdpq_mode_blender(RDPQ_BLENDER_MULTIPLY);
+      rdpq_mode_combiner(RDPQ_COMBINER_TEX_FLAT);
+              rdpq_set_prim_color(RGBA32(200, 25, 25, 128));
 
+        snprintf(hp_str, sizeof(hp_str), "%u", (unsigned)data->Vars->HP);
           rdpq_text_print(
 
             &TEXT_HEALTH, 
                 1,
-
-            data->ScreenX + 25, 
-            data->ScreenY + 25, 
-
-            //(char*)(uintptr_t)(data->Vars->HP));
+            data->ScreenX + data->ScreenW * 0.005, 
+            data->ScreenY + (data->ScreenH * 0.95), 
             hp_str);
-    
+
+      rdpq_blitparms_s hpBarParm = {};
+      hpBarParm.tile = TILE0;
+      hpBarParm.scale_x = data->ScreenW * 0.3;
+      hpBarParm.scale_y = data->ScreenH * 0.04;
+
+
+    rdpq_sprite_blit(data->hpBar.ptr, 
+      data->ScreenX + data->ScreenW * 0.15,
+      data->ScreenY + data->ScreenH * 0.91, &
+      hpBarParm);
   }
 
   void draw(Object& obj, Data *data, float deltaTime)
   {
     if(data != nullptr) {
     DrawLayer::use2D();
-      rdpq_mode_blender(RDPQ_BLENDER_MULTIPLY);
-      rdpq_mode_combiner(RDPQ_COMBINER_TEX_FLAT);
-
     DrawHealthBar(obj, data, deltaTime);
-    // this is called once every frame, and for every active camera.
-    // Put your drawing code here
+    
+        DrawLayer::useDefault();
+
+
     }
   }
 
@@ -125,6 +192,7 @@ namespace P64::Script::CD3F67733C77127D
 
   void onCollision(Object& obj, Data *data, const Coll::CollEvent& event)
   {
+    
     // collision callbacks, only used if any collider is attached
   }
 }

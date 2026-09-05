@@ -7,29 +7,19 @@
 
 namespace P64::Script::CE723306229A98AC
 {
+
+              rdpq_textparms_t TEXT_TITLE{
+        .width = 256,
+        .align = ALIGN_CENTER,
+        .disable_aa_fix = true
+
+              };
   P64_DATA(
-    [[P64::Name("Fade")]]
-    ObjectRef Fade;
     AssetRef<sprite_t> bgSpr;
     uint8_t selectedMap = 0;
-    // Put your arguments and runtime values bound to an object here.
-    // If you need them to show up in the editor, add a [[P64::Name("...")]] attribute.
-    //
-    // Types that can be set in the editor:
-    // - uint8_t, int8_t, uint16_t, int16_t, uint32_t, int32_t
-    // - float
-    // - AssetRef<sprite_t>
-    // - ObjectRef
-    //
-    // For unsigned integers (uint8_t/uint16_t/uint32_t) you can add a
-    // [[P64::Bitmask("0=Fire, 1=Water, 2=Earth")]] attribute to edit them as a
-    // named multi-select of bits instead of a plain number.
-    //
-    // Other types can be used but are not exposed in the editor.
+
   );
 
-  // The following functions are called by the engine at different points in the object's lifecycle.
-  // If you don't need a specific function you can remove it.
 
   void init(Object& obj, Data *data)
   {
@@ -48,29 +38,26 @@ namespace P64::Script::CE723306229A98AC
     // this is called once every frame, put your main logic here
   }
 
-  void fixedUpdate(Object& obj, Data *data, float fixedDeltaTime)
-  {
-    // this is called on the fixed physics timestep before collision/physics are stepped
-  }
-
   void draw(Object& obj, Data *data, float deltaTime)
   {
     DrawLayer::use2D();
 
-    
+
       rdpq_mode_blender(RDPQ_BLENDER_MULTIPLY);
       rdpq_mode_combiner(RDPQ_COMBINER_TEX_FLAT);
-              rdpq_blitparms_s bgParm = {};
-    bgParm.scale_x = 512;
-    bgParm.scale_y = 512;
-
+ 
+      rdpq_blitparms_s bgParm = {};
+    bgParm.scale_x = 480;
+    bgParm.scale_y = 240;
       rdpq_textparms_t titleParms = {};
       titleParms.height = 100;
+    rdpq_set_prim_color(RGBA32(0, 64, 128, 128));
 
-    rdpq_set_prim_color(RGBA16(0, 0, 0, 1));
-    rdpq_sprite_blit(data->bgSpr.ptr, 0, 0, &bgParm);
-    // this is called once every frame, and for every active camera.
-    // Put your drawing code here
+
+    rdpq_sprite_blit(data->bgSpr.ptr, 64, 64, &bgParm);
+      rdpq_text_printf(&TEXT_TITLE, 1, 180, 48, "MAP SELECT");
+
+
       DrawLayer::useDefault();
   }
 
@@ -88,10 +75,5 @@ namespace P64::Script::CE723306229A98AC
 
       // you can check for your own custom types here too
     }
-  }
-
-  void onCollision(Object& obj, Data *data, const Coll::CollEvent& event)
-  {
-    // collision callbacks, only used if any collider is attached
   }
 }

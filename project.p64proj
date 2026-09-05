@@ -45,13 +45,13 @@
       0,
       0
     ],
-    "region": 0,
+    "region": 12,
     "regionFree": true,
     "rtc": false,
     "saveType": 0
   },
   "romName": "ZS64",
-  "sceneIdLastOpened": 1,
-  "sceneIdOnBoot": 1,
-  "sceneIdOnReset": 1
+  "sceneIdLastOpened": 2,
+  "sceneIdOnBoot": 2,
+  "sceneIdOnReset": 2
 }

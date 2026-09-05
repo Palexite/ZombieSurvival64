@@ -1,21 +1,21 @@
 #include "script/userScript.h"
 #include "scene/sceneManager.h"
 #include "../p64/assetTable.h"
-#include "global.h"
+#include "globals/global.h"
 #include <libdragon.h>
 
 namespace P64::Script::C7E952F114A8850F
 {
 
         rdpq_textparms_t TEXT_BUTTON{
-        .width = 70,
+        .width = 90,
         .align = ALIGN_CENTER,
         .disable_aa_fix = true
     };
 
 
             rdpq_textparms_t TEXT_TITLE{
-        .width = 128,
+        .width = 256,
         .align = ALIGN_CENTER,
         .disable_aa_fix = true
     };
@@ -58,7 +58,7 @@ namespace P64::Script::C7E952F114A8850F
   void update(Object& obj, Data *data, float deltaTime)
   {
     if(data->shouldOpen == 0) {
-      if(data->yBuffer < 60) {
+      if(data->yBuffer < 120) {
       data->yBuffer += 8;
       }
     } else {
@@ -122,7 +122,7 @@ DrawLayer::use2D();
     // Put your drawing code here
     rdpq_text_printf(&TEXT_TITLE, 1, 86, data->yBuffer - 4, "PLAYER COUNT");
       constexpr const char* selection[4]  = {
-        "Single",
+        "Solo",
         "Duo",
         "Trio",
         "Quad",
@@ -138,14 +138,15 @@ DrawLayer::use2D();
     exitParm.scale_y = 24;
 
 
-
               rdpq_blitparms_s bgParm = {};
-    bgParm.scale_x = 256;
-    bgParm.scale_y = 128;
+    bgParm.scale_x = 512;
+    bgParm.scale_y = 256;
 rdpq_set_prim_color(RGBA32(0, 0, 0, 128));
 rdpq_sprite_blit(data->bgSpr.ptr, 30, data->yBuffer, &bgParm);
 
     for(int i = 0; i < 4; i++) {
+
+
 
     if(data->selected == i && (data->Xselected == 1)) {
     rdpq_set_prim_color(RGBA32(0, 0, 125, 128));
@@ -153,8 +154,19 @@ rdpq_sprite_blit(data->bgSpr.ptr, 30, data->yBuffer, &bgParm);
     } else {
     rdpq_set_prim_color(RGBA32(0, 0, 0, 128));
     }
-    rdpq_sprite_blit(data->buttonSpr.ptr, 160, (i * 32) + data->yBuffer, &buttonParm);
-    rdpq_text_printf(&TEXT_BUTTON, 1, 180, 16 + i * 32 + data->yBuffer, selection[i]);
+
+// Drawing buttons //
+
+    rdpq_sprite_blit(data->buttonSpr.ptr, 
+      30 + bgParm.scale_x * .8, 
+      (i * 32) + data->yBuffer,
+       &buttonParm);
+       
+    rdpq_text_printf(&TEXT_BUTTON, 
+      1, 
+      30 + bgParm.scale_x * .8, 
+      16 + i * 32 + data->yBuffer, 
+      selection[i]);
     }
 
     if(data->Xselected == 0) {

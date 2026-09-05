@@ -42,4 +42,7 @@ namespace P64::Gameplay {
 
     // Used to determine which port to assign the next created player character.
     extern int8_t CurrentPortCount;
+
+
+        extern void GameStart();
 }

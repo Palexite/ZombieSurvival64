@@ -5,18 +5,15 @@
 #include <scene/components/code.h>
 
 namespace P64::Script::C4D5BD79BCFCAECC
-
-
 {
-
         rdpq_textparms_t TEXT_BUTTON{
-        .width = 70,
+        .width = 200,
         .align = ALIGN_CENTER,
         .disable_aa_fix = true
     };
 
             rdpq_textparms_t TEXT_SUB{
-        .width = 120,
+        .width = 320,
         .align = ALIGN_CENTER,
         .disable_aa_fix = true
     };
@@ -45,7 +42,6 @@ namespace P64::Script::C4D5BD79BCFCAECC
 
   void destroy(Object& obj, Data *data)
   {
-    // clean-up, this is called when the object gets deleted
   }
 
   void update(Object& obj, Data *data, float deltaTime)
@@ -79,9 +75,6 @@ AudioManager::play2D("sfx/ui/hover1.wav64"_asset);
         data->selected += 1;
       }
 }
-
-
-
   }
 
   void fixedUpdate(Object& obj, Data *data, float fixedDeltaTime)
@@ -94,11 +87,11 @@ AudioManager::play2D("sfx/ui/hover1.wav64"_asset);
     DrawLayer::use2D();
           rdpq_blitparms_s logoblitParm = {};
           //blitParm.tile = TILE1;
-          logoblitParm.scale_y = 1.5;
-          logoblitParm.scale_x = 1.5;
+          logoblitParm.scale_y = 2;
+          logoblitParm.scale_x = 2;
 
           rdpq_sprite_blit(data->logoSpr.ptr, 12, 80, &logoblitParm);
-          rdpq_text_printf(&TEXT_SUB, 1, 48, 140, "- N64 EDITION -");
+          rdpq_text_printf(&TEXT_SUB, 1, -20, 160, "- N64 EDITION -");
       constexpr const char* selection[3]  = {
         "Play",
         "Settings",
@@ -106,8 +99,8 @@ AudioManager::play2D("sfx/ui/hover1.wav64"_asset);
       };
           rdpq_blitparms_s blitParm = {};
           //blitParm.tile = TILE1;
-          blitParm.scale_y = 16;
-          blitParm.scale_x = 1;
+          blitParm.scale_y = 32;
+          blitParm.scale_x = 2;
         rdpq_mode_blender(RDPQ_BLENDER_MULTIPLY);
       rdpq_mode_combiner(RDPQ_COMBINER_TEX_FLAT);
 
@@ -121,14 +114,14 @@ AudioManager::play2D("sfx/ui/hover1.wav64"_asset);
           } else {
             rdpq_set_prim_color(RGBA32(0, 0, 0, 255));
           }
-          rdpq_sprite_blit(data->buttonSpr.ptr, 16 + i * 48, 180 + (i * 16), &blitParm);
+          rdpq_sprite_blit(data->buttonSpr.ptr, 16 + i * 48, 300 + (i * 32), &blitParm);
 
           if(i == data->selected) {
               //char *s = (char*)"^01";
               // char *concat = strcat(s,  selection[i]);
           //rdpq_text_printf(&TEXT_BUTTON, 1, 19 + i * 48, 180 + i * 16, concat);
           }
-          rdpq_text_printf(&TEXT_BUTTON, 1, 16 + i * 48, 180 + i * 24, selection[i]);
+          rdpq_text_printf(&TEXT_BUTTON, 1, 16 + i * 48, 320 + i * 32, selection[i]);
 
 
 
@@ -149,19 +142,6 @@ AudioManager::play2D("sfx/ui/hover1.wav64"_asset);
       break;
       case EVENT_TYPE_CUSTOM_START:
       break;
-        /*
-      switch(event.value) {
-        case 0:
-
-        Scene &r = SceneManager::getCurrent();
-        Object *pSel = data->playerSel.get();
-          pSel->setEnabled(true);
-        obj.setEnabled(false);
-        break;
-
-      }
-      */
-      // you can check for your own custom types here too
     }
   }
 

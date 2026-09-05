@@ -1,5 +1,7 @@
 #include "script/userScript.h"
 #include "scene/sceneManager.h"
+#include "scene/components/camera.h"
+#include "utility/math.h"
 
 namespace P64::Script::CDABF08077359657
 {
@@ -10,30 +12,25 @@ namespace P64::Script::CDABF08077359657
     };
 
   P64_DATA(
-    [[P64::Name("Fade Component")]]
-    ObjectRef fade;
+    [[P64::Name("Orbital Camera")]]
+    ObjectRef Camera;
+        [[P64::Name("Object To Orbit")]]
+    ObjectRef orbitObj;
+        [[P64::Name("Character 1")]]
+    ObjectRef char1;
+        [[P64::Name("Character 2")]]
+    ObjectRef char2;
+        [[P64::Name("Character 3")]]
+    ObjectRef char3;
+        [[P64::Name("Character 4")]]
+    ObjectRef char4;
+      [[P64::Name("Divider")]]
+    ObjectRef divider;
 
-    //Target State
-    uint8_t tgtState = 0;
-    float holdDur = 1;
-    // Put your arguments and runtime values bound to an object here.
-    // If you need them to show up in the editor, add a [[P64::Name("...")]] attribute.
-    //
-    // Types that can be set in the editor:
-    // - uint8_t, int8_t, uint16_t, int16_t, uint32_t, int32_t
-    // - float
-    // - AssetRef<sprite_t>
-    // - ObjectRef
-    //
-    // For unsigned integers (uint8_t/uint16_t/uint32_t) you can add a
-    // [[P64::Bitmask("0=Fire, 1=Water, 2=Earth")]] attribute to edit them as a
-    // named multi-select of bits instead of a plain number.
-    //
-    // Other types can be used but are not exposed in the editor.
+    int Scenario = 0;
   );
 
-  // The following functions are called by the engine at different points in the object's lifecycle.
-  // If you don't need a specific function you can remove it.
+
 
   void init(Object& obj, Data *data)
   {
@@ -41,30 +38,25 @@ namespace P64::Script::CDABF08077359657
       
   }
 
-  void destroy(Object& obj, Data *data)
-  {
-    // clean-up, this is called when the object gets deleted
-  }
-
   void update(Object& obj, Data *data, float deltaTime)
   {
     // this is called once every frame, put your main logic here
-  }
+          //fm_vec3_t Axis = fm_vec3_t({0, 1, 0});
+        // fm_quat_t newRot = fm_quat_t({obj.rot.x, obj.rot.y, obj.rot.z, obj.rot.w});
+          Comp::Camera *cam = data->Camera.get()->getComponent<Comp::Camera>();
 
-  void fixedUpdate(Object& obj, Data *data, float fixedDeltaTime)
-  {
-    // this is called on the fixed physics timestep before collision/physics are stepped
+
+          //Make the camera orbit around the focused object.
+          fm_quat_t camRot = Math_Extended::LookAt( data->Camera.get()->pos,data->orbitObj.get()->pos);
+          data->Camera.get()->rot = camRot;
+     data->Camera.get()->pos += camRot * fm_vec3_t{128, 0, 0} * deltaTime;
+      
   }
 
   void draw(Object& obj, Data *data, float deltaTime)
   {
            DrawLayer::use2D();
-          //rdpq_fill_rectangle(0, 0, 16, 4)
 
-     // const rdpq_texparms_t* s{ 0, 0, {0.0f, 0, 0.0f, false} };
-     rdpq_set_mode_fill(RGBA32(0, 0, 0, 0));
-     //rdpq_fill_rectangle(0, 0, 512, 320);
-          rdpq_text_printf(&TEXT_CENTER, 1, 16, 128, "Founder\n William 'JetBoom' Moodhe");
 
           DrawLayer::useDefault();
   }
@@ -83,10 +75,5 @@ namespace P64::Script::CDABF08077359657
 
       // you can check for your own custom types here too
     }
-  }
-
-  void onCollision(Object& obj, Data *data, const Coll::CollEvent& event)
-  {
-    // collision callbacks, only used if any collider is attached
   }
 }

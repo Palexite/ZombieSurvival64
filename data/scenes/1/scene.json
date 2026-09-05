@@ -41,7 +41,7 @@
     ],
     "layers3D": [
       {
-        "blender": 0,
+        "blender": 5242944,
         "depthCompare": true,
         "depthWrite": true,
         "fog": false,
@@ -60,7 +60,7 @@
       {
         "blender": 5242944,
         "depthCompare": true,
-        "depthWrite": false,
+        "depthWrite": true,
         "fog": false,
         "fogColor": [
           0.0,
@@ -73,6 +73,74 @@
         "fogMin": 0.0,
         "lightMode": 0,
         "name": "3D Transp."
+      },
+      {
+        "blender": 0,
+        "depthCompare": false,
+        "depthWrite": false,
+        "fog": false,
+        "fogColor": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "fogColorMode": 0,
+        "fogMax": 0.0,
+        "fogMin": 0.0,
+        "lightMode": 0,
+        "name": "VM_1"
+      },
+      {
+        "blender": 0,
+        "depthCompare": false,
+        "depthWrite": false,
+        "fog": false,
+        "fogColor": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "fogColorMode": 0,
+        "fogMax": 0.0,
+        "fogMin": 0.0,
+        "lightMode": 0,
+        "name": "VM_2"
+      },
+      {
+        "blender": 0,
+        "depthCompare": false,
+        "depthWrite": false,
+        "fog": false,
+        "fogColor": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "fogColorMode": 0,
+        "fogMax": 0.0,
+        "fogMin": 0.0,
+        "lightMode": 0,
+        "name": "VM_3"
+      },
+      {
+        "blender": 0,
+        "depthCompare": false,
+        "depthWrite": false,
+        "fog": false,
+        "fogColor": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "fogColorMode": 0,
+        "fogMax": 0.0,
+        "fogMin": 0.0,
+        "lightMode": 0,
+        "name": "VM_4"
       }
     ],
     "layersPtx": [
@@ -103,6 +171,51 @@
   },
   "graph": {
     "children": [
+      {
+        "children": [],
+        "components": [
+          {
+            "data": {
+              "args": {
+                "Camera": "4089925852",
+                "char1": "2071829609",
+                "char2": "",
+                "char3": "",
+                "char4": "",
+                "divider": "3703282066",
+                "orbitObj": "62852884"
+              },
+              "script": 14820203433339229783
+            },
+            "id": 0,
+            "name": "Code",
+            "uuid": 5820628839721195982
+          }
+        ],
+        "enabled": true,
+        "name": "Intro",
+        "pos": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "propOverrides": {},
+        "proportionalScale": false,
+        "rot": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "selectable": true,
+        "uuid": 3675370553,
+        "uuidPrefab": 0
+      },
       {
         "children": [],
         "components": [
@@ -232,10 +345,10 @@
               "material": {
                 "depth": 0,
                 "env": [
-                  0.0,
-                  0.0,
-                  0.0,
-                  0.0
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0
                 ],
                 "fresnel": 0,
                 "fresnelColor": [
@@ -246,23 +359,32 @@
                 ],
                 "lighting": false,
                 "prim": [
-                  1.0,
-                  1.0,
-                  1.0,
+                  0.9475806355476379,
+                  0.9475806355476379,
+                  0.9475806355476379,
                   1.0
                 ],
                 "setDepth": false,
-                "setEnv": false,
+                "setEnv": true,
                 "setFresnel": false,
                 "setLighting": false,
                 "setPrim": true
               },
-              "model": 2928086680125825780,
-              "previewAnimName": "<Default Pose>"
+              "model": 7649488586787815449,
+              "previewAnimName": "idle_fists_punchA"
             },
             "id": 10,
             "name": "Model (Animated)",
             "uuid": 17440384989299723356
+          },
+          {
+            "data": {
+              "args": {},
+              "script": 14555325958656699070
+            },
+            "id": 0,
+            "name": "Code",
+            "uuid": 11072177252988046059
           },
           {
             "data": {
@@ -284,44 +406,44 @@
                 ],
                 "lighting": false,
                 "prim": [
-                  1.0,
-                  1.0,
-                  1.0,
+                  0.0,
+                  0.0,
+                  0.0,
                   0.0
                 ],
                 "setDepth": false,
                 "setEnv": false,
                 "setFresnel": false,
                 "setLighting": false,
-                "setPrim": true
+                "setPrim": false
               },
-              "model": 13123155256661489537,
+              "model": 2928086680125825780,
               "previewAnimName": "<Default Pose>"
             },
             "id": 10,
             "name": "Model (Animated)",
-            "uuid": 3322091997375200624
+            "uuid": 2907067844735511316
           }
         ],
         "enabled": true,
-        "name": "New Object",
+        "name": "Char1",
         "pos": [
-          9.082420349121094,
+          -140.0,
           0.0,
-          83.3157730102539
+          130.0
         ],
         "propOverrides": {},
         "proportionalScale": false,
         "rot": [
           0.0,
-          -0.1473550945520401,
+          -0.429899662733078,
           0.0,
-          0.9890836477279663
+          0.9028766751289368
         ],
         "scale": [
-          1.0,
-          1.0,
-          1.0
+          0.999998927116394,
+          0.9999999403953552,
+          0.999998927116394
         ],
         "selectable": true,
         "uuid": 2071829609,
@@ -337,10 +459,10 @@
               "material": {
                 "depth": 0,
                 "env": [
-                  0.0,
-                  0.0,
-                  0.0,
-                  0.0
+                  0.6470588445663452,
+                  0.6470588445663452,
+                  0.6470588445663452,
+                  0.6705882549285889
                 ],
                 "fresnel": 0,
                 "fresnelColor": [
@@ -352,9 +474,9 @@
                 "lighting": false,
                 "prim": [
                   0.0,
-                  0.5979382991790771,
+                  0.7096774578094482,
                   1.0,
-                  0.0
+                  1.0
                 ],
                 "setDepth": false,
                 "setEnv": false,
@@ -368,26 +490,10 @@
             "id": 1,
             "name": "Model (Static)",
             "uuid": 8008256821522675446
-          },
-          {
-            "data": {
-              "color": [
-                0.28865981101989746,
-                0.7139973640441895,
-                1.0,
-                0.0
-              ],
-              "index": 1,
-              "size": 64.0,
-              "type": 2
-            },
-            "id": 2,
-            "name": "Light",
-            "uuid": 11786250673179319944
           }
         ],
         "enabled": true,
-        "name": "New Object",
+        "name": "Sigil",
         "pos": [
           0.0,
           0.0,
@@ -402,39 +508,12 @@
           1.0
         ],
         "scale": [
-          1.0,
-          1.0,
-          1.0
+          0.75,
+          0.75,
+          0.75
         ],
         "selectable": true,
         "uuid": 62852884,
-        "uuidPrefab": 0
-      },
-      {
-        "children": [],
-        "components": [],
-        "enabled": true,
-        "name": "Fade",
-        "pos": [
-          0.0,
-          0.0,
-          0.0
-        ],
-        "propOverrides": {},
-        "proportionalScale": false,
-        "rot": [
-          0.0,
-          0.0,
-          0.0,
-          1.0
-        ],
-        "scale": [
-          1.0,
-          1.0,
-          1.0
-        ],
-        "selectable": true,
-        "uuid": 3225842863,
         "uuidPrefab": 0
       },
       {
@@ -466,22 +545,22 @@
         "enabled": true,
         "name": "Camera",
         "pos": [
-          0.0,
-          107.90505981445313,
-          299.6194763183594
+          -410.6235046386719,
+          110.0,
+          452.24365234375
         ],
         "propOverrides": {},
         "proportionalScale": false,
         "rot": [
           0.0,
-          -0.23247070610523224,
+          -0.39340847730636597,
           0.0,
-          0.9726033806800842
+          0.919363796710968
         ],
         "scale": [
           0.9999993443489075,
           1.0,
-          4.007770538330078
+          4.007777690887451
         ],
         "selectable": true,
         "uuid": 4089925852,
@@ -492,43 +571,133 @@
         "components": [
           {
             "data": {
-              "color": [
-                0.5412371158599854,
-                0.6878520846366882,
-                1.0,
-                0.5137255191802979
-              ],
-              "index": 0,
-              "size": 2048.0,
-              "type": 2
+              "culling": false,
+              "layerIdx": 0,
+              "material": {
+                "depth": 3,
+                "env": [
+                  0.6901960968971252,
+                  0.0235294122248888,
+                  0.0235294122248888,
+                  1.0
+                ],
+                "fresnel": 0,
+                "fresnelColor": [
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "lighting": false,
+                "prim": [
+                  0.0,
+                  0.0,
+                  0.0,
+                  1.0
+                ],
+                "setDepth": false,
+                "setEnv": false,
+                "setFresnel": false,
+                "setLighting": false,
+                "setPrim": true
+              },
+              "meshFilter": "",
+              "model": 149664572659728161
             },
-            "id": 2,
-            "name": "Light",
-            "uuid": 7597722351275874653
+            "id": 1,
+            "name": "Model (Static)",
+            "uuid": 18428877095386791032
+          }
+        ],
+        "enabled": true,
+        "name": "Divider",
+        "pos": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "propOverrides": {},
+        "proportionalScale": false,
+        "rot": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "scale": [
+          16.0,
+          16.0,
+          16.0
+        ],
+        "selectable": true,
+        "uuid": 3703282066,
+        "uuidPrefab": 0
+      },
+      {
+        "children": [],
+        "components": [
+          {
+            "data": {
+              "culling": false,
+              "layerIdx": 0,
+              "material": {
+                "depth": 0,
+                "env": [
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "fresnel": 0,
+                "fresnelColor": [
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "lighting": false,
+                "prim": [
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "setDepth": false,
+                "setEnv": false,
+                "setFresnel": false,
+                "setLighting": false,
+                "setPrim": true
+              },
+              "meshFilter": "",
+              "model": 365454121363530876
+            },
+            "id": 1,
+            "name": "Model (Static)",
+            "uuid": 3294150175721167140
           }
         ],
         "enabled": true,
         "name": "New Object",
         "pos": [
-          0.0,
-          130.16976928710938,
-          30.120906829833984
+          -252.848388671875,
+          70.09272766113281,
+          103.45336151123047
         ],
         "propOverrides": {},
         "proportionalScale": false,
         "rot": [
-          0.848145067691803,
           0.0,
           0.0,
-          0.5297640562057495
+          0.0,
+          1.0
         ],
         "scale": [
           1.0,
-          1.0000009536743164,
-          1.0000011920928955
+          1.0,
+          1.0
         ],
         "selectable": true,
-        "uuid": 1109576824,
+        "uuid": 2200769640,
         "uuidPrefab": 0
       },
       {
@@ -537,42 +706,86 @@
           {
             "data": {
               "color": [
-                0.5412371158599854,
-                0.6878520846366882,
+                0.0,
+                0.7338709831237793,
                 1.0,
-                0.5137255191802979
+                1.0
               ],
               "index": 0,
-              "size": 2048.0,
+              "size": 4096.0,
               "type": 2
             },
             "id": 2,
             "name": "Light",
-            "uuid": 7597722351275874653
+            "uuid": 14206021588354665432
           }
         ],
         "enabled": true,
-        "name": "New Object",
+        "name": "light",
         "pos": [
-          0.0,
-          130.16976928710938,
-          136.42955017089844
+          -133.94313049316406,
+          46.745948791503906,
+          79.07342529296875
         ],
         "propOverrides": {},
         "proportionalScale": false,
         "rot": [
-          0.848145067691803,
           0.0,
           0.0,
-          0.5297640562057495
+          0.0,
+          1.0
         ],
         "scale": [
           1.0,
-          1.0000009536743164,
-          1.0000011920928955
+          1.0,
+          1.0
         ],
         "selectable": true,
-        "uuid": 1163451451,
+        "uuid": 1059769530,
+        "uuidPrefab": 0
+      },
+      {
+        "children": [],
+        "components": [
+          {
+            "data": {
+              "color": [
+                0.0,
+                0.7338709831237793,
+                1.0,
+                1.0
+              ],
+              "index": 0,
+              "size": 4096.0,
+              "type": 2
+            },
+            "id": 2,
+            "name": "Light",
+            "uuid": 14206021588354665432
+          }
+        ],
+        "enabled": true,
+        "name": "light",
+        "pos": [
+          -133.94313049316406,
+          46.745948791503906,
+          137.70201110839844
+        ],
+        "propOverrides": {},
+        "proportionalScale": false,
+        "rot": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "selectable": true,
+        "uuid": 1171253143,
         "uuidPrefab": 0
       }
     ],

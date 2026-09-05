@@ -1,7 +1,7 @@
 #include "script/globalScript.h"
 #include "script/userScript.h"
 #include "scene/sceneManager.h"
-#include "global.h"
+#include "globals/global.h"
 
 namespace P64::User {
 
