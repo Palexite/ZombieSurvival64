@@ -1,4 +1,7 @@
+
 # Zombie Survival 64
+<img width="128" height="32" alt="zslogo" src="https://github.com/user-attachments/assets/9c55df18-5f50-4dfe-8aba-b449e694c659" />
+
 N64 adaptation of the Garry's Mod gamemode "Zombie Survival" programmed in C++
 
 Created using the Pyrite64 Engine as well as Libdragon
