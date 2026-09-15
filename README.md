@@ -79,10 +79,10 @@ this is a non-profit and will be adjusted to accomodate price fluctuation.
 - Preamble: I believe AI is useful in the areas in which are not fun to do, but they're not meant to replace a person's vision.
 - In all personal game & art projects made by me, I stick to the following principles:
 
--- AI is used for low-level programming (helper/utility functions, syntax and compilation errors, and for learning purposes)
--- AI can never be used for anything seen or felt, including but not limited to models, materials, sounds, music, map design, game-end programming, UI, voice acting.
--- AI is not used for ideas regarding anything seen or felt.
+- AI is used for low-level programming (helper/utility functions, syntax and compilation errors, and for learning purposes)
+- AI can never be used for anything seen or felt, including but not limited to models, materials, sounds, music, map design, game-end programming, UI, voice acting.
+- AI is not used for ideas regarding anything seen or felt.
 
-That being said, this is how this project uses AI and how it will going forward, it also applies to contributions and third-party mods to said project. Feel free to question.
+That being said, this is how this project uses AI and how it will going forward. It also applies to contributions and third-party mods to said project. Feel free to question.
 
 
