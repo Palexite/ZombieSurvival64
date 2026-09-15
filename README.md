@@ -76,7 +76,6 @@ this is a non-profit and will be adjusted to accomodate price fluctuation.
 - This project is designed to be played with unmodified hardware or on a emulator, it does not utilize or cause security circumvention or reverse engineering.
 
 # AI Usage
-- Preamble: I believe AI is useful in the areas in which are not fun to do, but they're not meant to replace a person's vision.
 - In all personal game & art projects made by me, I stick to the following principles:
 
 - AI is used for low-level programming (helper/utility functions, syntax and compilation errors, and for learning purposes)
