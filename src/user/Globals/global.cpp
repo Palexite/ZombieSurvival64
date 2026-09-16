@@ -2,6 +2,7 @@
 #include "script/userScript.h"
 #include "scene/sceneManager.h"
 #include "globals/global.h"
+#include "data/maps_def.h"
 
 namespace P64::User {
 
@@ -10,17 +11,14 @@ namespace P64::User {
   // 1 = Human, 0 = Zombie
   uint8_t portTeam = 1;
   uint8_t mapSelected = 0;
-
-  mapDef MapsDefined[16] = {};
-  std::map<char, uint16_t> HumanAnimsDef = {};
-
+  std::map<std::string, uint16_t> HumanAnimsDef = {};
+  
 
 
 
-  uint16_t GetHumanAnimationByName(char animName) {
-      if(User::HumanAnimsDef.at(animName) != 0) {
-      return User::HumanAnimsDef.at(animName);
-    } else return 0;
+  uint16_t GetHumanAnimationByName(const char* animName) {
+      auto animation = User::HumanAnimsDef.find(animName);
+      return animation != User::HumanAnimsDef.end() ? animation->second : 0;
   }
 }
 
@@ -31,26 +29,16 @@ namespace P64::GlobalScript::C6EFF0964420055D
   // If you don't need a specific function you can remove it.
   // This script is hooked up automatically and doesn't need any setup in the editor.
 
-void SetupMaps() {
-    User::MapsDefined[0].Name = "Abandoned Mall";
-    User::MapsDefined[0].OriginCreator = "";
-    User::MapsDefined[0].Difficulty = 1;
-    User::MapsDefined[0].Desc = "";
-    User::MapsDefined[0].Scene = 1;
-    User::MapsDefined[0].Thumb = "";
-}
-
 
 void SetupAnimations() {
-User::HumanAnimsDef[*"INTRO_MELEE2_1"] = 1;
+User::HumanAnimsDef["INTRO_MELEE2_1"] = 1;
 
 
 }
 
   void onGameInit()
   {
-        SetupMaps();
-
+        maps::loadMaps();
         rdpq_font_t *font = rdpq_font_load("rom:/fonts/RemingtonNoiseless_Med_1.font64");
 
         rdpq_fontstyle_t normal = {};
