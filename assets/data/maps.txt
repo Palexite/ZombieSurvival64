@@ -1,0 +1,23 @@
+[
+name = Abandon Mall
+desc = A vivid american mall during the winter, you'd never knew it was coming.
+creator = Anonymous 
+importer = Johnny Moe
+icon = rom:/tex/icons/maps/zs_abandonedmall.sprite
+difficulty = 1
+size = 1
+scene = 3
+isobj = false
+]
+
+[
+name = Butcher's Den
+desc = A slaughterhouse becomes the survival house.
+creator = Johnny Moe
+importer = Johnny Moe
+icon = rom:/tex/icons/maps/zs_abandonedmall.sprite
+difficulty = 2
+size = 1
+scene = 4
+isobj = false
+]
