@@ -1,3 +1,9 @@
 # Put you custom makefile rules here.
 # The main "Makefile" is auto-generated and can not be edited.
 
+assets_conv += filesystem/data/maps.txt
+
+filesystem/data/maps.txt: assets/data/maps.txt
+	@mkdir -p $(dir $@)
+	cp "$<" "$@"
+
