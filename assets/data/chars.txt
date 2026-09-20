@@ -1,0 +1,38 @@
+[
+    name = Andreas
+    Desc = Add description here
+    model_hands = 
+    model_main = 
+    model_head = 
+    tex_main =
+    tex_hands = 
+    tex_head = 
+
+    prevanim_idle = "";
+]
+
+[
+    name = Thomas
+    Desc = Add description here
+    model_hands = 
+    model_main = 
+    model_head = 
+    tex_main = 
+    tex_hands =
+    tex_head = 
+
+    prevanim_idle = 
+]
+
+[
+    name = Carson
+    Desc = Add description here
+    model_hands = 
+    model_main = 
+    model_head = 
+    tex_main = 
+    tex_hands = 
+    tex_head = 
+
+    prevanim_idle = 
+]
