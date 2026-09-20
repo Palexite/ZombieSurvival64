@@ -85,13 +85,15 @@ AudioManager::play2D("sfx/ui/hover1.wav64"_asset);
   void draw(Object& obj, Data *data, float deltaTime)
   {
     DrawLayer::use2D();
+            rdpq_mode_blender(RDPQ_BLENDER_MULTIPLY);
+      rdpq_mode_combiner(RDPQ_COMBINER_TEX_FLAT);
           rdpq_blitparms_s logoblitParm = {};
           //blitParm.tile = TILE1;
           logoblitParm.scale_y = 2;
           logoblitParm.scale_x = 2;
 
           rdpq_sprite_blit(data->logoSpr.ptr, 12, 80, &logoblitParm);
-          rdpq_text_printf(&TEXT_SUB, 1, -20, 160, "- N64 EDITION -");
+          rdpq_text_printf(&TEXT_SUB, 2, -20, 160, "- N64 EDITION -");
       constexpr const char* selection[3]  = {
         "Play",
         "Settings",
@@ -101,8 +103,6 @@ AudioManager::play2D("sfx/ui/hover1.wav64"_asset);
           //blitParm.tile = TILE1;
           blitParm.scale_y = 32;
           blitParm.scale_x = 2;
-        rdpq_mode_blender(RDPQ_BLENDER_MULTIPLY);
-      rdpq_mode_combiner(RDPQ_COMBINER_TEX_FLAT);
 
 
       rdpq_textparms_t titleParms = {};
@@ -121,7 +121,7 @@ AudioManager::play2D("sfx/ui/hover1.wav64"_asset);
               // char *concat = strcat(s,  selection[i]);
           //rdpq_text_printf(&TEXT_BUTTON, 1, 19 + i * 48, 180 + i * 16, concat);
           }
-          rdpq_text_printf(&TEXT_BUTTON, 1, 16 + i * 48, 320 + i * 32, selection[i]);
+          rdpq_text_printf(&TEXT_BUTTON, 2, 16 + i * 48, 320 + i * 32, selection[i]);
 
 
 
