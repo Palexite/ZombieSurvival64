@@ -1,0 +1,5 @@
+[
+    Prefab = NONE;
+    CamTarget = N/A;
+    CamDistance = 8;
+]

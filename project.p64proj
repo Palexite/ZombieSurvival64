@@ -51,7 +51,7 @@
     "saveType": 0
   },
   "romName": "ZS64",
-  "sceneIdLastOpened": 2,
-  "sceneIdOnBoot": 2,
-  "sceneIdOnReset": 2
+  "sceneIdLastOpened": 3,
+  "sceneIdOnBoot": 1,
+  "sceneIdOnReset": 1
 }

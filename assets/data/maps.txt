@@ -1,13 +1,53 @@
 [
-name = Abandon Mall
+name = Abandoned Mall
 desc = A vivid american mall during the winter, you'd never knew it was coming.
 creator = Anonymous 
 importer = Johnny Moe
-icon = rom:/tex/icons/maps/zs_abandonedmall.sprite
+date = #-#-2012
+icon = tex/icons/maps/zs_abandonmall.sprite
 difficulty = 1
-size = 1
+size = 2
 scene = 3
-isobj = false
+category = Normal
+]
+
+[
+name = Zombie Village
+desc = NEEDS DESCRIPTION!
+creator = Anonymous
+importer = Anonymous
+date = #-#-2012
+icon = tex/icons/maps/zs_zombievillage.sprite
+difficulty = 2
+size = 4
+scene = 5
+category = Normal
+]
+
+[
+name = Asylum
+desc = NEEDS DESCRIPTION!
+creator = Anonymous
+importer = Anonymous
+date = #-#-2012
+icon = tex/icons/maps/zs_asylum.sprite
+difficulty = 2
+size = 4
+scene = 5
+category = Normal
+]
+
+[
+name = Harvest
+desc = NEEDS DESCRIPTION!
+creator = Anonymous
+importer = Anonymous
+date = #-#-2012
+icon = tex/icons/maps/zs_harvest.sprite
+difficulty = 2
+size = 4
+scene = 5
+category = Normal
 ]
 
 [
@@ -15,9 +55,38 @@ name = Butcher's Den
 desc = A slaughterhouse becomes the survival house.
 creator = Johnny Moe
 importer = Johnny Moe
-icon = rom:/tex/icons/maps/zs_abandonedmall.sprite
+date = #-#-2012
+icon = tex/icons/maps/zs_butchersden.sprite
 difficulty = 2
 size = 1
 scene = 4
-isobj = false
+category = Normal
+]
+
+[
+name = Filth Core
+desc = NEEDS DESCRIPTION!
+creator = Anonymous
+importer = Anonymous
+date = #-#-2012
+icon = tex/icons/maps/zs_abandonmall.sprite
+difficulty = 2
+size = 4
+scene = 5
+
+category = Normal
+
+]
+
+[
+name = Vertigo
+desc = In onslaught of a horde, humans are pushed into a large skyscraper on the verge of collapse and must make their way to the top.
+creator = Anonymous
+importer = Anonymous
+date = #-#-2012
+icon = tex/icons/maps/zs_vertigo.sprite
+difficulty = 4
+size = 4
+scene = 5
+category = Objective
 ]
