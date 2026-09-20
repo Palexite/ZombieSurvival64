@@ -26,6 +26,8 @@ namespace P64::Script::C7E952F114A8850F
 
     [[P64::Name("Map Select")]]
     ObjectRef mapSelect;
+     [[P64::Name("Intro Script")]]
+    ObjectRef introScript;
     uint8_t selected = 0;
         uint8_t Xselected = 1;
     float yBuffer = -128;
@@ -120,7 +122,7 @@ DrawLayer::use2D();
       rdpq_mode_combiner(RDPQ_COMBINER_TEX_FLAT);
     // this is called once every frame, and for every active camera.
     // Put your drawing code here
-    rdpq_text_printf(&TEXT_TITLE, 1, 86, data->yBuffer - 4, "PLAYER COUNT");
+    rdpq_text_printf(&TEXT_TITLE, 2, 86, data->yBuffer - 4, "PLAYER COUNT");
       constexpr const char* selection[4]  = {
         "Solo",
         "Duo",
@@ -176,7 +178,7 @@ rdpq_sprite_blit(data->bgSpr.ptr, 30, data->yBuffer, &bgParm);
     }
 
       rdpq_sprite_blit(data->buttonSpr.ptr, 32, 0 + data->yBuffer, &exitParm);
-      rdpq_text_printf(&TEXT_BUTTON, 1, 32, 16 + data->yBuffer, "Back");
+      rdpq_text_printf(&TEXT_BUTTON, 2, 32, 16 + data->yBuffer, "Back");
   DrawLayer::useDefault();
   }
 
@@ -203,6 +205,7 @@ rdpq_sprite_blit(data->bgSpr.ptr, 30, data->yBuffer, &bgParm);
         Object *mSel = data->mapSelect.get();
 
           mSel->setEnabled(true);
+            SceneManager::getCurrent().sendEvent(data->introScript.id, obj.id, EVENT_TYPE_CUSTOM_START, 1);
       } else {
         data->shouldOpen = 1;
         data->mainMenu.get()->setEnabled(true);

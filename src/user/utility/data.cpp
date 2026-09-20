@@ -1,5 +1,6 @@
 #include <cstdio>
 #include <string>
+#include <vector>
 #include "data.h"
 
 namespace data {
@@ -31,4 +32,25 @@ namespace data {
         return contents;
     }
 
+
+    std::vector<std::string> getLinesFromString(std::string content) {
+
+        std::vector<std::string> lines{};
+
+        size_t pos = 0;
+        while (pos < content.size()) {
+            size_t nextPos = content.find('\n', pos);
+            if (nextPos == std::string::npos) {
+                nextPos = content.size();
+            }
+
+            std::string line = content.substr(pos, nextPos - pos);
+            pos = nextPos + 1;
+            lines.push_back(line);
+
+        }
+        
+        return lines;
+
+    }
 }

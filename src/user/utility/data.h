@@ -7,4 +7,5 @@
 
 namespace data {
     std::string readtxt(std::string filePath);
+    std::vector<std::string> getLinesFromString(std::string content);
 }

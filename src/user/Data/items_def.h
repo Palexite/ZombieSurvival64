@@ -29,7 +29,7 @@ namespace Items {
 
 
 
-std::map<std::string, itemDef> itemDefs;
+std::map<std::string, itemDef> itemDefined;
 
 
 }

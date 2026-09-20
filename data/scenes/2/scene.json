@@ -162,7 +162,7 @@
         "name": "PTX Opaque"
       }
     ],
-    "name": "New Scene",
+    "name": "zs_testlevel",
     "physicsTickRate": 30,
     "positionSolverIterations": 6,
     "renderPipeline": 0,

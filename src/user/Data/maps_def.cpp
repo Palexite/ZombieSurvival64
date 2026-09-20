@@ -2,23 +2,22 @@
 #include "utility/data.h"
 #include "utility/string_extended.h"
 #include <cstdio>
-namespace maps {
+namespace data::maps {
 std::vector<maps::mapDef> mapsDefined{};
 
     void loadMaps() {
 
-        maps::mapDef currentDef{};
+        mapDef currentDef{};
         
 
 
         std::string content = data::readtxt("rom:/data/maps.txt");
         if (content.empty()) {
             currentDef.name = "No maps found";
-            maps::mapsDefined.push_back(currentDef);
+           mapsDefined.push_back(currentDef);
             return;
         }
-
-
+        /*
         size_t pos = 0;
         while (pos < content.size()) {
             size_t nextPos = content.find('\n', pos);
@@ -28,6 +27,11 @@ std::vector<maps::mapDef> mapsDefined{};
 
             std::string line = content.substr(pos, nextPos - pos);
             pos = nextPos + 1;
+        */
+            for( std::string line : data::getLinesFromString(content)) {
+            if (!line.empty() && line.back() == '\r') {
+                line.pop_back();
+            }
 
             // Skip empty lines
             if (line.empty()) {
@@ -39,7 +43,7 @@ std::vector<maps::mapDef> mapsDefined{};
                 currentDef = {};
             } else if(line.starts_with("]")) {
 
-                    maps::mapsDefined.push_back(currentDef);
+                    mapsDefined.push_back(currentDef);
 
             } else {
                 std::vector<std::string> property = string_ext::Sep(line, " = ");
@@ -64,50 +68,14 @@ std::vector<maps::mapDef> mapsDefined{};
                     currentDef.difficulty = std::stoi(value);
                 } else if(key == "size") {
                     currentDef.size = std::stoi(value);
-                } else if(key == "isobj") {
-
-                    if(value == "true" || value == "yes" || value == "1")
-                        currentDef.isObjective = true;
-                    else
-                        currentDef.isObjective = false;
+                } else if(key == "category") {
+                    currentDef.category = value;
+                } else if(key == "date") {
+                    currentDef.date = value;
                 }
                 
 
             }
-
-
-
-            /*
-            // Parse the line into a mapDef structure
-            maps::mapDef map;
-            size_t fieldPos = 0;
-            size_t fieldEnd;
-
-            // Name
-            fieldEnd = line.find(',', fieldPos);
-            map.name = line.substr(fieldPos, fieldEnd - fieldPos).c_str();
-            fieldPos = fieldEnd + 1;
-
-            // Origin Creator
-            fieldEnd = line.find(',', fieldPos);
-            map.originCreator = line.substr(fieldPos, fieldEnd - fieldPos).c_str();
-            fieldPos = fieldEnd + 1;
-
-            // Importer
-            fieldEnd = line.find(',', fieldPos);
-            map.importer = line.substr(fieldPos, fieldEnd - fieldPos).c_str();
-            fieldPos = fieldEnd + 1;
-
-            // Description
-            fieldEnd = line.find(',', fieldPos);
-            map.desc = line.substr(fieldPos, fieldEnd - fieldPos).c_str();
-            fieldPos = fieldEnd + 1;
-
-            // Icon
-            fieldEnd = line.find(',', fieldPos);
-            map.icon = line.substr(fieldPos, fieldEnd - fieldPos).c_str();
-            fieldPos = fieldEnd + 1;
-            */
             
     }
     }

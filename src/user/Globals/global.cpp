@@ -36,9 +36,9 @@ User::HumanAnimsDef["INTRO_MELEE2_1"] = 1;
 
 }
 
-  void onGameInit()
-  {
-        maps::loadMaps();
+
+// Create fonts for the whole game. Needed for both
+void CreateFonts() {
         rdpq_font_t *font = rdpq_font_load("rom:/fonts/RemingtonNoiseless_Med_1.font64");
 
         rdpq_fontstyle_t normal = {};
@@ -48,7 +48,30 @@ User::HumanAnimsDef["INTRO_MELEE2_1"] = 1;
         outlineStyle.color = RGBA16(0, 0, 0, 1);
   rdpq_font_style(font, 0, &normal);
   rdpq_font_style(font, 1, &outlineStyle);
+  rdpq_text_register_font(4, font);
+
+  font = rdpq_font_load("rom:/fonts/RemingtonNoiseless_Large_1.font64");
+  rdpq_font_style(font, 0, &normal);
+  rdpq_font_style(font, 1, &outlineStyle);
+  rdpq_text_register_font(3, font);
+
+    font = rdpq_font_load("rom:/fonts/RemingtonNoiseless_Small_1.font64");
+  rdpq_font_style(font, 0, &normal);
+  rdpq_font_style(font, 1, &outlineStyle);
+  rdpq_text_register_font(2, font);
+
+      font = rdpq_font_load("rom:/fonts/RemingtonNoiseless_Mini_1.font64");
+  rdpq_font_style(font, 0, &normal);
+  rdpq_font_style(font, 1, &outlineStyle);
   rdpq_text_register_font(1, font);
+}
+
+  void onGameInit()
+  {
+        data::maps::loadMaps();
+        CreateFonts();
+
+        
 
     // called once when the game starts, all other systems (e.g. asset manager) are already inititalized
   }
@@ -102,6 +125,8 @@ User::HumanAnimsDef["INTRO_MELEE2_1"] = 1;
 
   void onSceneDraw2D()
   {
+    
+    
     // called once per frame after all cameras/objects are drawn.
     // The default 2D layer is active and must be restored if changed.
   }

@@ -12,7 +12,7 @@ extern uint8_t portTeam;
 extern uint8_t mapSelected;
 
 
-extern maps::mapDef MapsDefined[16];
+extern data::maps::mapDef MapsDefined[16];
 
 
 

@@ -183,6 +183,8 @@
                 "char3": "",
                 "char4": "",
                 "divider": "3703282066",
+                "mainMenu": "",
+                "mainMenuObj": "599752112",
                 "orbitObj": "62852884"
               },
               "script": 14820203433339229783
@@ -271,7 +273,7 @@
             "uuid": 15743125374487462457
           }
         ],
-        "enabled": true,
+        "enabled": false,
         "name": "MainMenu",
         "pos": [
           0.0,
@@ -303,7 +305,8 @@
               "args": {
                 "Fade": "",
                 "flags": "",
-                "inOutDura": " 1"
+                "inOutDura": " 1",
+                "introScript": "3675370553"
               },
               "script": 14876008620601546924
             },
@@ -423,6 +426,44 @@
             "id": 10,
             "name": "Model (Animated)",
             "uuid": 2907067844735511316
+          },
+          {
+            "data": {
+              "layerIdx": 0,
+              "material": {
+                "depth": 0,
+                "env": [
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "fresnel": 0,
+                "fresnelColor": [
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "lighting": false,
+                "prim": [
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "setDepth": false,
+                "setEnv": false,
+                "setFresnel": false,
+                "setLighting": false,
+                "setPrim": false
+              },
+              "model": 13123155256661489537,
+              "previewAnimName": "<Default Pose>"
+            },
+            "id": 10,
+            "name": "Model (Animated)",
+            "uuid": 650730134874047085
           }
         ],
         "enabled": true,
@@ -679,9 +720,9 @@
         "enabled": true,
         "name": "New Object",
         "pos": [
-          -252.848388671875,
-          70.09272766113281,
-          103.45336151123047
+          -252.875,
+          70.125,
+          103.5
         ],
         "propOverrides": {},
         "proportionalScale": false,
