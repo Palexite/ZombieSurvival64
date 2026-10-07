@@ -2,6 +2,7 @@
 #include "scene/sceneManager.h"
 #include "../p64/assetTable.h"
 #include "globals/global.h"
+#include "globals/players.h"
 #include <libdragon.h>
 
 namespace P64::Script::C7E952F114A8850F
@@ -198,7 +199,7 @@ rdpq_sprite_blit(data->bgSpr.ptr, 30, data->yBuffer, &bgParm);
       
 
       if(data->Xselected == 1) {
-      //User::portCount = data->selected;
+      players::portCount = data->selected + 1;
         data->shouldOpen = 1;
 
         Scene &r = SceneManager::getCurrent();
