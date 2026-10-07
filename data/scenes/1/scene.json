@@ -166,8 +166,8 @@
     "physicsTickRate": 15,
     "positionSolverIterations": 2,
     "renderPipeline": 0,
-    "velocitySolverIterations": 3,
-    "visualUnitsPerMeter": 100.0
+    "renderScale": 100.0,
+    "velocitySolverIterations": 3
   },
   "graph": {
     "children": [
@@ -189,6 +189,7 @@
               },
               "script": 14820203433339229783
             },
+            "enabled": true,
             "id": 0,
             "name": "Code",
             "uuid": 5820628839721195982
@@ -216,7 +217,8 @@
         ],
         "selectable": true,
         "uuid": 3675370553,
-        "uuidPrefab": 0
+        "uuidPrefab": 0,
+        "visMask": 1
       },
       {
         "children": [],
@@ -229,6 +231,7 @@
               },
               "script": 14405136078508426511
             },
+            "enabled": true,
             "id": 0,
             "name": "Code",
             "uuid": 7093196861267028059
@@ -256,7 +259,8 @@
         ],
         "selectable": true,
         "uuid": 4062205339,
-        "uuidPrefab": 0
+        "uuidPrefab": 0,
+        "visMask": 1
       },
       {
         "children": [],
@@ -264,10 +268,12 @@
           {
             "data": {
               "args": {
-                "playerSel": "4062205339"
+                "playerSel": "4062205339",
+                "userMenu": "1627165519"
               },
               "script": 14183450932032614092
             },
+            "enabled": true,
             "id": 0,
             "name": "Code",
             "uuid": 15743125374487462457
@@ -295,7 +301,8 @@
         ],
         "selectable": true,
         "uuid": 599752112,
-        "uuidPrefab": 0
+        "uuidPrefab": 0,
+        "visMask": 1
       },
       {
         "children": [],
@@ -310,6 +317,7 @@
               },
               "script": 14876008620601546924
             },
+            "enabled": true,
             "id": 0,
             "name": "Code",
             "uuid": 2725934028568073213
@@ -337,7 +345,50 @@
         ],
         "selectable": true,
         "uuid": 4105619516,
-        "uuidPrefab": 0
+        "uuidPrefab": 0,
+        "visMask": 1
+      },
+      {
+        "children": [],
+        "components": [
+          {
+            "data": {
+              "args": {
+                "playerSel": "",
+                "userMenu": ""
+              },
+              "script": 14307748079977574252
+            },
+            "enabled": true,
+            "id": 0,
+            "name": "Code",
+            "uuid": 14433818853242544606
+          }
+        ],
+        "enabled": false,
+        "name": "userMenu",
+        "pos": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "propOverrides": {},
+        "proportionalScale": false,
+        "rot": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "selectable": true,
+        "uuid": 1627165519,
+        "uuidPrefab": 0,
+        "visMask": 1
       },
       {
         "children": [],
@@ -376,6 +427,7 @@
               "model": 7649488586787815449,
               "previewAnimName": "idle_fists_punchA"
             },
+            "enabled": true,
             "id": 10,
             "name": "Model (Animated)",
             "uuid": 17440384989299723356
@@ -385,6 +437,7 @@
               "args": {},
               "script": 14555325958656699070
             },
+            "enabled": true,
             "id": 0,
             "name": "Code",
             "uuid": 11072177252988046059
@@ -423,6 +476,7 @@
               "model": 2928086680125825780,
               "previewAnimName": "<Default Pose>"
             },
+            "enabled": true,
             "id": 10,
             "name": "Model (Animated)",
             "uuid": 2907067844735511316
@@ -461,6 +515,7 @@
               "model": 13123155256661489537,
               "previewAnimName": "<Default Pose>"
             },
+            "enabled": true,
             "id": 10,
             "name": "Model (Animated)",
             "uuid": 650730134874047085
@@ -469,9 +524,9 @@
         "enabled": true,
         "name": "Char1",
         "pos": [
-          -140.0,
+          -1.399999976158142,
           0.0,
-          130.0
+          1.2999999523162842
         ],
         "propOverrides": {},
         "proportionalScale": false,
@@ -482,13 +537,14 @@
           0.9028766751289368
         ],
         "scale": [
-          0.999998927116394,
-          0.9999999403953552,
-          0.999998927116394
+          0.159999817609787,
+          0.15999998152256012,
+          0.159999817609787
         ],
         "selectable": true,
         "uuid": 2071829609,
-        "uuidPrefab": 0
+        "uuidPrefab": 0,
+        "visMask": 1
       },
       {
         "children": [],
@@ -528,6 +584,7 @@
               "meshFilter": "",
               "model": 1567726345834094514
             },
+            "enabled": true,
             "id": 1,
             "name": "Model (Static)",
             "uuid": 8008256821522675446
@@ -549,13 +606,14 @@
           1.0
         ],
         "scale": [
-          0.75,
-          0.75,
-          0.75
+          0.11999999731779099,
+          0.11999999731779099,
+          0.11999999731779099
         ],
         "selectable": true,
         "uuid": 62852884,
-        "uuidPrefab": 0
+        "uuidPrefab": 0,
+        "visMask": 1
       },
       {
         "children": [],
@@ -563,12 +621,15 @@
           {
             "data": {
               "aspect": 0.0,
-              "far": 4000.0,
+              "far": 40.0,
               "fov": 65.0,
               "mode": 1,
-              "near": 100.0,
-              "orthoSize": 300.0,
+              "near": 1.0,
+              "orthoSize": 3.0,
               "projection": 0,
+              "targetMode": 0,
+              "targetObjUUID": 0,
+              "visMask": 255,
               "vpOffset": [
                 0,
                 0
@@ -578,6 +639,7 @@
                 480
               ]
             },
+            "enabled": true,
             "id": 3,
             "name": "Camera",
             "uuid": 9699589337054708570
@@ -586,9 +648,9 @@
         "enabled": true,
         "name": "Camera",
         "pos": [
-          -410.6235046386719,
-          110.0,
-          452.24365234375
+          -4.106235027313232,
+          1.100000023841858,
+          4.522436618804932
         ],
         "propOverrides": {},
         "proportionalScale": false,
@@ -605,7 +667,8 @@
         ],
         "selectable": true,
         "uuid": 4089925852,
-        "uuidPrefab": 0
+        "uuidPrefab": 0,
+        "visMask": 1
       },
       {
         "children": [],
@@ -645,6 +708,7 @@
               "meshFilter": "",
               "model": 149664572659728161
             },
+            "enabled": true,
             "id": 1,
             "name": "Model (Static)",
             "uuid": 18428877095386791032
@@ -666,13 +730,14 @@
           1.0
         ],
         "scale": [
-          16.0,
-          16.0,
-          16.0
+          2.559999942779541,
+          2.559999942779541,
+          2.559999942779541
         ],
         "selectable": true,
         "uuid": 3703282066,
-        "uuidPrefab": 0
+        "uuidPrefab": 0,
+        "visMask": 1
       },
       {
         "children": [],
@@ -712,6 +777,7 @@
               "meshFilter": "",
               "model": 365454121363530876
             },
+            "enabled": true,
             "id": 1,
             "name": "Model (Static)",
             "uuid": 3294150175721167140
@@ -720,9 +786,9 @@
         "enabled": true,
         "name": "New Object",
         "pos": [
-          -252.875,
-          70.125,
-          103.5
+          -2.528749942779541,
+          0.7012499570846558,
+          1.034999966621399
         ],
         "propOverrides": {},
         "proportionalScale": false,
@@ -733,13 +799,14 @@
           1.0
         ],
         "scale": [
-          1.0,
-          1.0,
-          1.0
+          0.1599999964237213,
+          0.1599999964237213,
+          0.1599999964237213
         ],
         "selectable": true,
         "uuid": 2200769640,
-        "uuidPrefab": 0
+        "uuidPrefab": 0,
+        "visMask": 1
       },
       {
         "children": [],
@@ -753,9 +820,10 @@
                 1.0
               ],
               "index": 0,
-              "size": 4096.0,
+              "size": 40.959999084472656,
               "type": 2
             },
+            "enabled": true,
             "id": 2,
             "name": "Light",
             "uuid": 14206021588354665432
@@ -764,9 +832,9 @@
         "enabled": true,
         "name": "light",
         "pos": [
-          -133.94313049316406,
-          46.745948791503906,
-          79.07342529296875
+          -1.3394312858581543,
+          0.46745947003364563,
+          0.7907342314720154
         ],
         "propOverrides": {},
         "proportionalScale": false,
@@ -783,7 +851,8 @@
         ],
         "selectable": true,
         "uuid": 1059769530,
-        "uuidPrefab": 0
+        "uuidPrefab": 0,
+        "visMask": 1
       },
       {
         "children": [],
@@ -797,9 +866,10 @@
                 1.0
               ],
               "index": 0,
-              "size": 4096.0,
+              "size": 40.959999084472656,
               "type": 2
             },
+            "enabled": true,
             "id": 2,
             "name": "Light",
             "uuid": 14206021588354665432
@@ -808,9 +878,9 @@
         "enabled": true,
         "name": "light",
         "pos": [
-          -133.94313049316406,
-          46.745948791503906,
-          137.70201110839844
+          -1.3394312858581543,
+          0.46745947003364563,
+          1.3770201206207275
         ],
         "propOverrides": {},
         "proportionalScale": false,
@@ -827,7 +897,49 @@
         ],
         "selectable": true,
         "uuid": 1171253143,
-        "uuidPrefab": 0
+        "uuidPrefab": 0,
+        "visMask": 1
+      },
+      {
+        "children": [],
+        "components": [
+          {
+            "data": {
+              "audioUUID": 3099950262502228847,
+              "autoPlay": false,
+              "loop": false,
+              "volume": 1.0
+            },
+            "enabled": true,
+            "id": 6,
+            "name": "Audio (2D)",
+            "uuid": 8440903641931032281
+          }
+        ],
+        "enabled": true,
+        "name": "Music",
+        "pos": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "propOverrides": {},
+        "proportionalScale": false,
+        "rot": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "selectable": true,
+        "uuid": 1339338884,
+        "uuidPrefab": 0,
+        "visMask": 1
       }
     ],
     "components": [],
@@ -853,6 +965,8 @@
     ],
     "selectable": true,
     "uuid": 4252910706,
-    "uuidPrefab": 0
-  }
+    "uuidPrefab": 0,
+    "visMask": 1
+  },
+  "version": 2
 }
