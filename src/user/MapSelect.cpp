@@ -4,12 +4,13 @@
 #include <vector>
 #include <string>
 
-
 #include "../p64/assetTable.h"
 #include <libdragon.h>
 #include "UI/scrollBox.h"
 #include "utility/assets.h"
 #include "data/maps_def.h"
+#include "UI/fade.h"
+#include "Globals/global.h"
 
 
 namespace P64::Script::CE723306229A98AC
@@ -43,6 +44,9 @@ namespace P64::Script::CE723306229A98AC
 
     [[P64::Name("intro script")]]
     ObjectRef introScript;
+
+    uint8_t isFading;
+    UI::Fade fade;
   );
 
 
@@ -50,6 +54,7 @@ namespace P64::Script::CE723306229A98AC
   {
         sprite_t *bgTex = (sprite_t*)AssetManager::getByIndex("tex/white.sprite"_asset);
         data->bgSpr.ptr = bgTex;
+        data->fade = UI::Fade(0, 0, 640, 480, 2, RGBA32(0, 0, 0, 255), true, false);
     // initialization, this is called once when the object spawns
   }
 
@@ -63,7 +68,6 @@ namespace P64::Script::CE723306229A98AC
 
     joypad_buttons_t presButtons = joypad_get_buttons_pressed(JOYPAD_PORT_1);
 
-
     if(presButtons.c_down) {
       if(data->selectedMap < data::maps::mapsDefined.size()-1) {
         data->selectedMap++;
@@ -74,6 +78,17 @@ namespace P64::Script::CE723306229A98AC
         data->selectedMap--;
       }
     }
+
+    if(presButtons.a) {
+      User::mapSelected = data->selectedMap;
+      data->isFading = 1;
+    }
+
+
+    if(data->isFading && data->fade.curTime >= data->fade.fadeTime) {
+      data->isFading = 0;
+      SceneManager::load(2);
+    }
   }
 
 
@@ -83,10 +98,12 @@ namespace P64::Script::CE723306229A98AC
   {
     DrawLayer::use2D();
 
-
       rdpq_mode_blender(RDPQ_BLENDER_MULTIPLY);
       rdpq_mode_combiner(RDPQ_COMBINER_TEX_FLAT);
  
+
+            //Drawing the fade
+
       rdpq_blitparms_s bgParm = {};
     bgParm.scale_x = 480;
     bgParm.scale_y = 280;
@@ -173,7 +190,7 @@ namespace P64::Script::CE723306229A98AC
     break;
 
     default:
-      sizeText = "Your mother's 8008s";
+      sizeText = "Your mother's 80085";
       break;
    };
       rdpq_text_print(&TEXT_STAT, 1, -32, 380, "Creator");
@@ -187,6 +204,11 @@ namespace P64::Script::CE723306229A98AC
 
       rdpq_text_print(&TEXT_STAT, 1, 200, 400, "Size");
       rdpq_text_print(&TEXT_STAT, 1, 350, 400, sizeText);
+
+
+    if(data->isFading) {
+      data->fade.fadeDraw(deltaTime);
+    }
       DrawLayer::useDefault();
 
 
