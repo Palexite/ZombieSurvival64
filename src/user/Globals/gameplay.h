@@ -7,39 +7,8 @@
 #include "array"
 #include <map>
 
-
-struct ZombieInfo
-{
-uint8_t PortNumber;
-uint8_t zClass;
-uint16_t HP;
-uint8_t moveSpeed;
-bool isDead;
-
-};
-
-struct HumanInfo
-{
-uint8_t PortNumber;
-uint8_t HP;
-uint8_t BA;
-uint8_t moveSpeed;
-bool isDead;
-uint16_t Ammo[8];
-uint8_t CurrentItem;
-uint16_t Items[4];
-};
-
-
-
-namespace P64::Gameplay {
-
-
-
-
-    extern std::map<uint16_t, HumanInfo> humansInfo;
-    extern std::map<uint16_t, ZombieInfo> zombiesInfo;
-
+namespace Gameplay {
+    
     // Used to determine which port to assign the next created player character.
     extern int8_t CurrentPortCount;
 
