@@ -8,7 +8,7 @@
   "collLayer6": "Layer 6",
   "collLayer7": "Layer 7",
   "debugMenu": true,
-  "editorVersion": "0.8.0",
+  "editorVersion": "0.9.0",
   "metadata": {
     "enabled": false,
     "langs": [
@@ -35,10 +35,10 @@
     ]
   },
   "name": "ZombieSurvival",
-  "pathEmu": "C:\\Users\\peter\\OneDrive\\preservation\\ares-windows-x64\\ares-v148\\ares.exe",
+  "pathEmu": "C:\\Tools\\ares-windows-x64\\ares-v148\\ares.exe",
   "pathN64Inst": "",
   "romHeader": {
-    "category": 0,
+    "category": 1,
     "controllers": [
       0,
       0,
@@ -51,7 +51,15 @@
     "saveType": 0
   },
   "romName": "ZS64",
-  "sceneIdLastOpened": 3,
+  "sceneIdLastOpened": 1,
   "sceneIdOnBoot": 1,
-  "sceneIdOnReset": 1
+  "sceneIdOnReset": 1,
+  "visLayer0": "World",
+  "visLayer1": "WorldModel_1",
+  "visLayer2": "WorldModel_2",
+  "visLayer3": "WorldModel_3",
+  "visLayer4": "ViewModel_1",
+  "visLayer5": "ViewModel_2",
+  "visLayer6": "ViewModel_3",
+  "visLayer7": "ViewModel_4"
 }
