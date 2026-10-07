@@ -3,6 +3,7 @@
 #include "../p64/assetTable.h"
 #include <libdragon.h>
 #include <scene/components/code.h>
+#include "UI/Popup.h"
 
 namespace P64::Script::C4D5BD79BCFCAECC
 {
@@ -20,11 +21,17 @@ namespace P64::Script::C4D5BD79BCFCAECC
 
 
   P64_DATA(
+
+        //Popup *popup;
+
     AssetRef<sprite_t> buttonSpr;
     AssetRef<sprite_t> logoSpr;
 
     [[P64::Name("player Select")]]
     ObjectRef playerSel;
+
+    [[P64::Name("user Menu")]]
+    ObjectRef userMenu;
 
     uint8_t selected = 0;
   );
@@ -33,6 +40,8 @@ namespace P64::Script::C4D5BD79BCFCAECC
 
   void init(Object& obj, Data *data)
   {
+    //P64::SceneManager::getCurrent()
+    //data->popup = nullptr;
         sprite_t *spTex = (sprite_t*)AssetManager::getByIndex("tex/grad1.sprite"_asset);
     data->buttonSpr.ptr = spTex;
 
@@ -50,26 +59,26 @@ joypad_buttons_t presButtons = joypad_get_buttons_pressed(JOYPAD_PORT_1);
 
 if(presButtons.a == 1) {
   AudioManager::play2D("sfx/ui/press1.wav64"_asset);
-  SceneManager::getCurrent().sendEvent(obj.id, obj.id, 0, data->selected);
-
+  SceneManager::getCurrent().sendEvent(obj.id, obj.id, EVENT_TYPE_CUSTOM_START, data->selected);
+/*
         Scene &r = SceneManager::getCurrent();
         Object *pSel = data->playerSel.get();
         //void *d = pSel->getComponent<Comp::CollBody>()->collider.id
           pSel->setEnabled(true);
         obj.setEnabled(false);
-
+*/
 
   //r.getObjectById()
 } else if(presButtons.c_up || presButtons.c_left) {
 AudioManager::play2D("sfx/ui/hover1.wav64"_asset);
       if(data->selected <= 0) {
-        data->selected = 2;
+        data->selected = 3;
       } else {
         data->selected -= 1;
       }
 } else if(presButtons.c_down || presButtons.c_right) {
 AudioManager::play2D("sfx/ui/hover1.wav64"_asset);
-      if(data->selected >= 2) {
+      if(data->selected >= 3) {
         data->selected = 0;
       } else {
         data->selected += 1;
@@ -94,11 +103,14 @@ AudioManager::play2D("sfx/ui/hover1.wav64"_asset);
 
           rdpq_sprite_blit(data->logoSpr.ptr, 12, 80, &logoblitParm);
           rdpq_text_printf(&TEXT_SUB, 2, -20, 160, "- N64 EDITION -");
-      constexpr const char* selection[3]  = {
+          
+      constexpr const char* selection[4]  = {
         "Play",
+        "Player Menu",
         "Settings",
         "Credits"
       };
+
           rdpq_blitparms_s blitParm = {};
           //blitParm.tile = TILE1;
           blitParm.scale_y = 32;
@@ -107,7 +119,7 @@ AudioManager::play2D("sfx/ui/hover1.wav64"_asset);
 
       rdpq_textparms_t titleParms = {};
       titleParms.height = 100;
-      for(int i = 0; i < 3; i++) {
+      for(int i = 0; i < 4; i++) {
 
           if(i == data->selected) {
           rdpq_set_prim_color(RGBA32(128, 128, 255, 255));
@@ -126,7 +138,17 @@ AudioManager::play2D("sfx/ui/hover1.wav64"_asset);
 
 
       }
+
+/*
+      if(data->popup != nullptr) {
+          data->popup->draw(deltaTime);
+      }
+    */
     DrawLayer::useDefault();
+  }
+
+  void popChoice(int choice) {
+    
   }
 
   void onEvent(Object& obj, Data *data, const ObjectEvent &event)
@@ -134,13 +156,21 @@ AudioManager::play2D("sfx/ui/hover1.wav64"_asset);
     // generic events an object can receive
     switch(event.type)
     {
-      case EVENT_TYPE_READY: // object is fully initialized, no update call has happened yet
-      break;
-      case EVENT_TYPE_ENABLE: // object got enabled
-      break;
-      case EVENT_TYPE_DISABLE: // object got disabled
-      break;
       case EVENT_TYPE_CUSTOM_START:
+      switch(event.value) {
+          case 0:
+            data->playerSel.get()->setEnabled(true);
+            obj.setEnabled(false);
+            break;
+          case 1:
+          data->userMenu.get()->setEnabled(true);
+          obj.setEnabled(false);
+            //std::vector<std::string> choices = {"OK"};
+            //data->popup = new Popup(0, 0, 480, 640, "No Controller Pak Detected", "You need a controller pak to enter. Please check that it is mounted properly.", RGBA32(125, 125, 125, 125), 1, choices, popChoice);
+            // Also possible your controller pak is corrupted and fucked lmaoooo
+            break;
+        
+      }
       break;
     }
   }
