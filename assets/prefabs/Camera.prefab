@@ -1,0 +1,59 @@
+{
+  "obj": {
+    "children": [],
+    "components": [
+      {
+        "data": {
+          "aspect": 0.0,
+          "far": 40.0,
+          "fov": 65.0,
+          "mode": 1,
+          "near": 1.0,
+          "orthoSize": 3.0,
+          "projection": 0,
+          "targetMode": 0,
+          "targetObjUUID": 0,
+          "visMask": 255,
+          "vpOffset": [
+            0,
+            0
+          ],
+          "vpSize": [
+            640,
+            480
+          ]
+        },
+        "enabled": true,
+        "id": 3,
+        "name": "Camera",
+        "uuid": 7105324843078402515
+      }
+    ],
+    "enabled": true,
+    "name": "Camera",
+    "pos": [
+      0.0,
+      0.48846590518951416,
+      1.9913697242736816
+    ],
+    "propOverrides": {},
+    "proportionalScale": false,
+    "rot": [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ],
+    "scale": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "selectable": true,
+    "uuid": 3542471745,
+    "uuidPrefab": 0,
+    "visMask": 1
+  },
+  "uuid": 467398545,
+  "version": 2
+}
