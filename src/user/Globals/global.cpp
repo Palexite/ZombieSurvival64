@@ -6,7 +6,8 @@
 
 namespace P64::User {
 
-  uint8_t portCount = 1;
+
+
   uint8_t flags = 0;
   // 1 = Human, 0 = Zombie
   uint8_t portTeam = 1;
