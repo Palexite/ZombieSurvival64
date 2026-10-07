@@ -1,0 +1,115 @@
+{
+  "obj": {
+    "children": [],
+    "components": [
+      {
+        "data": {
+          "layerIdx": 0,
+          "material": {
+            "depth": 0,
+            "env": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "fresnel": 0,
+            "fresnelColor": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "lighting": false,
+            "prim": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "setDepth": false,
+            "setEnv": false,
+            "setFresnel": false,
+            "setLighting": false,
+            "setPrim": false
+          },
+          "model": 2928086680125825780,
+          "previewAnimName": "<Default Pose>"
+        },
+        "enabled": true,
+        "id": 10,
+        "name": "Model (Animated)",
+        "uuid": 8193400325776015772
+      },
+      {
+        "data": {
+          "layerIdx": 0,
+          "material": {
+            "depth": 0,
+            "env": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "fresnel": 0,
+            "fresnelColor": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "lighting": false,
+            "prim": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "setDepth": false,
+            "setEnv": false,
+            "setFresnel": false,
+            "setLighting": false,
+            "setPrim": false
+          },
+          "model": 13123155256661489537,
+          "previewAnimName": "<Default Pose>"
+        },
+        "enabled": true,
+        "id": 10,
+        "name": "Model (Animated)",
+        "uuid": 9511606824897176787
+      }
+    ],
+    "enabled": true,
+    "name": "PreviewCharacter",
+    "pos": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "propOverrides": {
+      "11272843812465326562": "1:0.160000,0.160000,0.160000",
+      "13911321452997764027": "1:0.000000,0.000000,0.000000",
+      "9467563534403475754": "0:0.000000,0.000000,0.000000,1.000000"
+    },
+    "proportionalScale": false,
+    "rot": [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ],
+    "scale": [
+      0.1599999964237213,
+      0.1599999964237213,
+      0.1599999964237213
+    ],
+    "selectable": true,
+    "uuid": 3100686958,
+    "uuidPrefab": 0,
+    "visMask": 1
+  },
+  "uuid": 4027794214,
+  "version": 2
+}
