@@ -35,10 +35,12 @@ void Fade::StartFadeOut() {
 }
 
 void Fade::fadeDraw(float delta) {
+
       rdpq_mode_blender(RDPQ_BLENDER_MULTIPLY);
       rdpq_mode_combiner(RDPQ_COMBINER_TEX_FLAT);
     curTime += delta;
     fadeAmount = std::clamp(curTime / fadeTime, 0.0f, 1.0f);
+    
     if(fadeIn) {
       fadeColor = RGBA32(fadeColor.r, fadeColor.g, fadeColor.b, (uint8_t)(fadeAmount * 255));
     } else {
