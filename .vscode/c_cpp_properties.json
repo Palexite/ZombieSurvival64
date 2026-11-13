@@ -13,9 +13,10 @@
                 "_UNICODE"
             ],
             "windowsSdkVersion": "10.0.26100.0",
-            "compilerPath": "C:/msys64/mingw64/bin/g++.exe",
+            //"compilerPath": "C:/msys64/mingw64/bin/g++.exe",
+            "compilerPath": "C:/msys64/pyrite64-sdk/bin/mips64-elf-g++.exe",
             "cStandard": "gnu23",
-            "cppStandard": "gnu++23",
+            "cppStandard": "gnu++20",
             "intelliSenseMode": "windows-gcc-x64"
         }
     ],
