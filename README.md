@@ -39,7 +39,7 @@ Another reason is that I wanted a game I could play with my colleagues since we 
 - Can be emulated on realistic emulators like Ares, or played on the actual Nintendo 64 hardware if you desire.
   (NOTE: some emulators do not work. This is an engine limitation and there's nothing I can do)
 
-- Original art designed specifically to suit the N64 limitations. Music replication, models, textures, were handcrafted specifically for this game.
+- Original art designed specifically to suit the N64 limitations. Most models and textures were handcrafted specifically for this game.
   
 - Levels replicating real and popular community maps.
   
