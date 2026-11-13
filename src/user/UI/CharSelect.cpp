@@ -1,20 +1,20 @@
 #include "CharSelect.h"
 
+#include "Globals/global.h"
 #include "Globals/players.h"
-#include "Globals/gameplay.h"
+#include "Globals/game.h"
+
 #include "utility/splitscreen.h"
 
 namespace UI {
 
     CharSelect::CharSelect(P64::Object& linkedObject, P64::ObjectRef placeholdCamera)
         : linkedObject(linkedObject) {
-    //Creating the previewCharacter objects
     this->placeholdCamera = placeholdCamera; 
     for(int i=1; i <= players::portCount; i++) {
       
-      uint16_t objId = P64::SceneManager::getCurrent().addObject("PreviewCharacter.pf"_asset);
+      uint16_t objId = P64::SceneManager::getCurrent().addObject("prefabs/PreviewCharacter.pf"_asset);
       deferredChars.push_back(objId);
-      //data->deferredChars.push_back(objId);
     }
 
     }
@@ -28,20 +28,37 @@ namespace UI {
             }
             this->prevChars.emplace_back(
                 this->currentPortCount,
-                object,
-                splitscreen::CalculateDimensions(this->currentPortCount, players::portCount),
+                object, 
+                splitscreen::calculateDimensions(this->currentPortCount, players::portCount),
                 this->placeholdCamera
+            );
+            CharSelectCorner newChar = CharSelectCorner(this->currentPortCount, object);
+P64::User::panels.emplace_back(
+    std::make_unique<UI::CharSelectCorner>(this->currentPortCount, object)
+);
+            this->charSelectCorners.emplace_back(
+                newChar
             );
 
             this->deferredChars.erase(this->deferredChars.begin() + i);
             this->currentPortCount += 1;
         }
-                    for(UI::previewChar prevChar : this->prevChars) {
-                prevChar.Update(deltaTime);
-            }
+
+
+        for(UI::previewChar prevChar : this->prevChars) {
+            prevChar.Update(deltaTime);
+        }
+
+        for(UI::CharSelectCorner corner : this->charSelectCorners) {
+            corner.update(deltaTime);
+        }
     }
 
-    void CharSelect::draw(float deltaTime) {
 
+
+    void CharSelect::draw(float deltaTime) {
+        for(UI::CharSelectCorner& corner : this->charSelectCorners) {
+            //corner.draw(deltaTime);
+        }
     }
     };

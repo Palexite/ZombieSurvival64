@@ -40,26 +40,30 @@ namespace P64::Script::CE723306229A98AC
     AssetRef<sprite_t> bgSpr;
     uint8_t selectedMap = 0;
     uint8_t selectedCategory = 0;
-    std::vector<std::string> categories;
 
     [[P64::Name("intro script")]]
     ObjectRef introScript;
 
     uint8_t isFading;
-    UI::Fade fade;
+    UI::Fade *fade;
   );
 
 
   void init(Object& obj, Data *data)
   {
+        data->fade = nullptr;
         sprite_t *bgTex = (sprite_t*)AssetManager::getByIndex("tex/white.sprite"_asset);
         data->bgSpr.ptr = bgTex;
-        data->fade = UI::Fade(0, 0, 640, 480, 2, RGBA32(0, 0, 0, 255), true, false);
+        data->fade = new UI::Fade(0, 0, 640, 480, 2, RGBA32(0, 0, 0, 255), true, false);
     // initialization, this is called once when the object spawns
   }
 
   void destroy(Object& obj, Data *data)
   {
+    delete data->fade;
+    data->fade = nullptr;
+    data->bgSpr.ptr = nullptr;
+
     // clean-up, this is called when the object gets deleted
   }
 
@@ -85,7 +89,7 @@ namespace P64::Script::CE723306229A98AC
     }
 
 
-    if(data->isFading && data->fade.curTime >= data->fade.fadeTime) {
+    if(data->isFading && data->fade->curTime >= data->fade->fadeTime) {
       data->isFading = 0;
       SceneManager::load(2);
     }
@@ -125,6 +129,7 @@ namespace P64::Script::CE723306229A98AC
       rdpq_text_printf(&TEXT_TITLE, 2, 180, 48, "MAP SELECT");
 
     std::vector<UIItem> uiItems = {};
+
     for (const data::maps::mapDef& map : data::maps::mapsDefined) {
       uiItems.push_back({
         map.icon.c_str(),
@@ -135,8 +140,9 @@ namespace P64::Script::CE723306229A98AC
 
 
 
+    if(!data->isFading) {
       UI::ScrollBox::DrawScroll(64, 64, 256, 280, RGBA32(75, 75, 255, 125), RGBA32(100, 125, 15, 255), .5f, 32, data->selectedMap, 8, uiItems);
-
+    }
 
 
       data::maps::mapDef curMap = data::maps::mapsDefined[data->selectedMap];
@@ -148,7 +154,9 @@ namespace P64::Script::CE723306229A98AC
       iconParm.scale_x = 1.5;
       iconParm.scale_y = 1.5;
 
-      rdpq_sprite_blit(Icon, 335, 90, &iconParm);
+      if(Icon != nullptr) {
+        rdpq_sprite_blit(Icon, 335, 90, &iconParm);
+      }
       rdpq_text_printf(&TEXT_TITLE, 2, 300, 86, curMap.name.c_str());
       rdpq_text_printf(&TEXT_DESC, 1, 324, 200, curMap.desc.c_str());
 
@@ -207,7 +215,7 @@ namespace P64::Script::CE723306229A98AC
 
 
     if(data->isFading) {
-      data->fade.fadeDraw(deltaTime);
+      data->fade->fadeDraw(deltaTime);
     }
       DrawLayer::useDefault();
 

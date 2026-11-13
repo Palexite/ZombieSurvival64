@@ -1,9 +1,12 @@
 #include "script/userScript.h"
 #include "scene/sceneManager.h"
 #include "scene/components/camera.h"
-#include "utility/math.h"
 #include <algorithm>
 #include "UI/fade.h"
+
+#include "utility/math.h"
+#include "utility/fonts.h"
+#include "utility/eeprom.h"
 
 namespace P64::Script::CDABF08077359657
 {
@@ -136,7 +139,7 @@ namespace P64::Script::CDABF08077359657
           // If we're presenting the credits of the game.
           if(data != nullptr && data->chore == 0 && data->currentCredit >= 0 && data->currentCredit < 3) {
 
-            rdpq_text_print(&TEXT_CENTER, 2, -100, 360, CREDITS[data->currentCredit]);
+            rdpq_text_print(&TEXT_CENTER, fonts::getFont(EEPROM_GAME::CurUserSettings.gameFont, FONTSIZE_MEDIUM, 1), -100, 360, CREDITS[data->currentCredit]);
 
           }
           if (data != nullptr)

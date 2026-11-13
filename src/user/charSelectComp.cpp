@@ -2,7 +2,7 @@
 #include "scene/sceneManager.h"
 #include "UI/previewChar.h"
 #include "Globals/players.h"
-#include "Globals/gameplay.h"
+#include "Globals/game.h"
 #include "UI/CharSelect.h"
 
 namespace P64::Script::CABFFBFAEEEB8D0A
@@ -12,25 +12,18 @@ namespace P64::Script::CABFFBFAEEEB8D0A
     // so we need to move that memory elsewhere. 
 
 //The camera that simply exists so the scene can run without error at the first frame. In reality we won't be needing it.
-      UI::CharSelect* dummyCharSelect;
     [[P64::Name("Placehold Camera")]]
     ObjectRef placeholderCamera;
+    
+      UI::CharSelect* dummyCharSelect;
 
   );
 
 
   void init(Object& obj, Data *data)
   {
+    data->dummyCharSelect = nullptr;
     data->dummyCharSelect = new UI::CharSelect(obj, data->placeholderCamera);
-    //Creating the previewCharacter objects 
-    /*
-    for(int i=0; i < players::portCount; i++) {
-      
-      uint16_t objId = SceneManager::getCurrent().addObject("PreviewCharacter.pf"_asset);
-      data->dummyCharSelect->deferredChars.push_back(objId);
-      //data->deferredChars.push_back(objId);
-    }
-    */
 
   }
 
@@ -42,23 +35,6 @@ namespace P64::Script::CABFFBFAEEEB8D0A
 
   void update(Object& obj, Data *data, float deltaTime)
   {
-  /*
-for (size_t i = 0; i < data->dummyCharSelect->deferredChars.size();) {
-    Object* object =
-    SceneManager::getCurrent().getObjectById(data->dummyCharSelect->deferredChars[i]);
-
-    if (!object) {
-        ++i;
-        continue;
-    }
-
-    data->dummyCharSelect->prevChars.emplace_back(
-        static_cast<int8_t>(++Gameplay::CurrentPortCount),
-        object
-    );
-
-    data->dummyCharSelect->deferredChars.erase(data->dummyCharSelect->deferredChars.begin() + i);
-  */
     data->dummyCharSelect->update(obj, deltaTime);
 
 }
@@ -69,8 +45,12 @@ for (size_t i = 0; i < data->dummyCharSelect->deferredChars.size();) {
 
   void draw(Object& obj, Data *data, float deltaTime)
   {
+    DrawLayer::use2D();
+      rdpq_mode_blender(RDPQ_BLENDER_MULTIPLY);
+      rdpq_mode_combiner(RDPQ_COMBINER_TEX_FLAT);
 
     data->dummyCharSelect->draw(deltaTime);
+    DrawLayer::useDefault();
   }
 
 }

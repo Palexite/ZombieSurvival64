@@ -5,15 +5,15 @@
 #include "scene/sceneManager.h"
 class Player {
     public:
-    int16_t Health;
-    bool isDead;
-    float walkSpeed;
-    int portId;
-    P64::Object *gameObject;
+    int16_t Health = 100;
+    bool isDead = false;
+    float walkSpeed = 1.0f;
+    int portId = 1;
+    P64::Object *gameObject = nullptr;
 
     Player();
     virtual ~Player() = default;
-    void Kill(P64::Object obj, int weapon);
+    virtual void Kill(P64::Object obj, int weapon);
 
 
 };

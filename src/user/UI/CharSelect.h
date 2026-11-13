@@ -4,6 +4,8 @@
 #include "previewChar.h"
 #include "script/userScript.h"
 #include "scene/sceneManager.h"
+#include "CharSelectCorner.h"
+#include <memory>
 #include <cstdint>
 
 namespace UI {
@@ -13,10 +15,12 @@ namespace UI {
     P64::Object& linkedObject;
 
     P64::ObjectRef placeholdCamera;
-     // Preview characters we need to add at the next frame (because they don't exist yet)
-    std::vector<uint16_t> deferredChars = {};
+
+    std::vector<uint16_t> deferredChars = {}; // Preview characters we need to add at the next frame (because they don't exist yet)
 
     std::vector<UI::previewChar> prevChars = {};
+
+    std::vector<UI::CharSelectCorner> charSelectCorners = {};
 
     int currentPortCount = 1;
 

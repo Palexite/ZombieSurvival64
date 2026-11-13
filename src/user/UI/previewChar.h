@@ -5,6 +5,7 @@
 #include "script/userScript.h"
 #include "scene/sceneManager.h"
 #include "utility/splitscreen.h"
+#include "utility/math.h"
 
 namespace Comp {
     class AnimModel;
@@ -19,7 +20,7 @@ namespace UI {
 
         P64::Object *linkedObject;
         std::int8_t portId;
-        splitscreen::quadrant window;
+        quadrant window;
         P64::ObjectRef CamToDestroy;
         P64::Object *Camera;
         bool camInitialized = false;
@@ -33,7 +34,7 @@ namespace UI {
 
         void Update(float delta);
 
-        previewChar(std::int8_t portId, P64::Object *linkedObject, splitscreen::quadrant window, P64::ObjectRef CamToDestroy);
+        previewChar(std::int8_t portId, P64::Object *linkedObject, quadrant window, P64::ObjectRef CamToDestroy);
     };
     
 }

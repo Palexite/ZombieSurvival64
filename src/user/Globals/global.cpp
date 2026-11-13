@@ -1,8 +1,12 @@
 #include "script/globalScript.h"
 #include "script/userScript.h"
 #include "scene/sceneManager.h"
-#include "globals/global.h"
-#include "data/maps_def.h"
+#include "global.h"
+
+
+
+#include "utility/fonts.h"
+#include "UI/Panel.h"
 
 namespace P64::User {
 
@@ -12,65 +16,19 @@ namespace P64::User {
   // 1 = Human, 0 = Zombie
   uint8_t portTeam = 1;
   uint8_t mapSelected = 0;
-  std::map<std::string, uint16_t> HumanAnimsDef = {};
-  
-
-
-
-  uint16_t GetHumanAnimationByName(const char* animName) {
-      auto animation = User::HumanAnimsDef.find(animName);
-      return animation != User::HumanAnimsDef.end() ? animation->second : 0;
-  }
+  std::vector<std::unique_ptr<UI::Panel>> panels = {};
 }
 
 
 namespace P64::GlobalScript::C6EFF0964420055D
 {
-  // The following functions are called by the engine at different points in the games lifecycle.
-  // If you don't need a specific function you can remove it.
-  // This script is hooked up automatically and doesn't need any setup in the editor.
 
-
-void SetupAnimations() {
-User::HumanAnimsDef["INTRO_MELEE2_1"] = 1;
-
-
-}
-
-
-// Create fonts for the whole game. Needed for both
-void CreateFonts() {
-        rdpq_font_t *font = rdpq_font_load("rom:/fonts/RemingtonNoiseless_Med_1.font64");
-
-        rdpq_fontstyle_t normal = {};
-        normal.color = RGBA16(31, 31, 31, 1);
-        rdpq_fontstyle_t outlineStyle = {};
-
-        outlineStyle.color = RGBA16(0, 0, 0, 1);
-  rdpq_font_style(font, 0, &normal);
-  rdpq_font_style(font, 1, &outlineStyle);
-  rdpq_text_register_font(4, font);
-
-  font = rdpq_font_load("rom:/fonts/RemingtonNoiseless_Large_1.font64");
-  rdpq_font_style(font, 0, &normal);
-  rdpq_font_style(font, 1, &outlineStyle);
-  rdpq_text_register_font(3, font);
-
-    font = rdpq_font_load("rom:/fonts/RemingtonNoiseless_Small_1.font64");
-  rdpq_font_style(font, 0, &normal);
-  rdpq_font_style(font, 1, &outlineStyle);
-  rdpq_text_register_font(2, font);
-
-      font = rdpq_font_load("rom:/fonts/RemingtonNoiseless_Mini_1.font64");
-  rdpq_font_style(font, 0, &normal);
-  rdpq_font_style(font, 1, &outlineStyle);
-  rdpq_text_register_font(1, font);
-}
 
   void onGameInit()
   {
         data::maps::loadMaps();
-        CreateFonts();
+        data::characters::loadCharacters();
+        fonts::setupFonts();
 
         
 
@@ -112,6 +70,7 @@ void CreateFonts() {
 
   void onScenePreDraw3D()
   {
+
     // called once per frame per camera.
     // this is done before all object draws for the specific camera.
     // The default 3D layer is active and must be restored if changed.
@@ -122,11 +81,15 @@ void CreateFonts() {
     // called once per frame per camera.
     // this is done after all objects are drawn for the specific camera.
     // The default 3D layer is active and must be restored if changed.
+    DrawLayer::useDefault();
+    
   }
 
   void onSceneDraw2D()
   {
-    
+    for( auto& panel : P64::User::panels) {
+      panel->draw(0);
+    }
     
     // called once per frame after all cameras/objects are drawn.
     // The default 2D layer is active and must be restored if changed.

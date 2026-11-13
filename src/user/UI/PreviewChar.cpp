@@ -1,10 +1,11 @@
 #include "previewChar.h"
 #include "scene/components/Camera.h"
+#include "scene/components/animModel.h"
 
 
 namespace UI {
 
-    previewChar::previewChar(std::int8_t portId, P64::Object *linkedObject, splitscreen::quadrant window, P64::ObjectRef CamToDestroy)
+    previewChar::previewChar(std::int8_t portId, P64::Object *linkedObject, quadrant window, P64::ObjectRef CamToDestroy)
         : charBody(nullptr)
         , linkedObject(linkedObject)
         , portId(portId)
@@ -13,12 +14,15 @@ namespace UI {
     {
         this->Camera = nullptr;
         fm_quat_t customRot = fm_quat_t{1, 0, 0, 0};
-        fm_quat_from_euler_zyx(&customRot, 0, 45, 0);
-        this->CameraId = P64::SceneManager::getCurrent().addObject("prefabs/Camera.pf"_asset, fm_vec3_t{0, 100, 160}, fm_vec3_t{1, 1, 1});
+        fm_quat_from_euler_zyx(&customRot, 0, 180, 0);
+        
+        this->CameraId = P64::SceneManager::getCurrent().addObject(
+            "prefabs/Camera.pf"_asset,
+             fm_vec3_t{0, 1, 4},
+              fm_vec3_t{1, 1, 1});
     }
 
     void previewChar::changeCharacter(int charId) {
-    
 
     }
 

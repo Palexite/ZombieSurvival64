@@ -7,7 +7,7 @@
 #include "array"
 #include <map>
 
-namespace Gameplay {
+namespace Game {
     
     // Used to determine which port to assign the next created player character.
     extern int8_t CurrentPortCount;

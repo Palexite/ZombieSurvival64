@@ -354,6 +354,7 @@
           {
             "data": {
               "args": {
+                "mainMenu": "599752112",
                 "playerSel": "",
                 "userMenu": ""
               },
@@ -526,7 +527,7 @@
         "pos": [
           -1.399999976158142,
           0.0,
-          1.2999999523162842
+          1.3000000715255737
         ],
         "propOverrides": {},
         "proportionalScale": false,
@@ -897,47 +898,6 @@
         ],
         "selectable": true,
         "uuid": 1171253143,
-        "uuidPrefab": 0,
-        "visMask": 1
-      },
-      {
-        "children": [],
-        "components": [
-          {
-            "data": {
-              "audioUUID": 3099950262502228847,
-              "autoPlay": false,
-              "loop": false,
-              "volume": 1.0
-            },
-            "enabled": true,
-            "id": 6,
-            "name": "Audio (2D)",
-            "uuid": 8440903641931032281
-          }
-        ],
-        "enabled": true,
-        "name": "Music",
-        "pos": [
-          0.0,
-          0.0,
-          0.0
-        ],
-        "propOverrides": {},
-        "proportionalScale": false,
-        "rot": [
-          0.0,
-          0.0,
-          0.0,
-          1.0
-        ],
-        "scale": [
-          1.0,
-          1.0,
-          1.0
-        ],
-        "selectable": true,
-        "uuid": 1339338884,
         "uuidPrefab": 0,
         "visMask": 1
       }

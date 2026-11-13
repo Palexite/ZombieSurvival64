@@ -1,6 +1,6 @@
 #include "script/userScript.h"
 #include "scene/sceneManager.h"
-#include "globals/gameplay.h"
+#include "globals/game.h"
 #include "globals/global.h"
 #include "Player/HumanPlayer.h"
 #include "Globals/Players.h"
@@ -9,6 +9,9 @@
 #include "scene/components/animModel.h"
 #include "scene/components/Camera.h"
 #include <stdint.h>
+
+
+// THIS COMPONENT IS OBSOLETE AND WILL BE REMOVED SOON. DO NOT RELY ON IT.
 
 namespace P64::Script::CD3F67733C77127D
 {
@@ -47,7 +50,7 @@ namespace P64::Script::CD3F67733C77127D
     data->charBody = obj.getComponent<Comp::CharBody>();
     data->camera = obj.getComponent<Comp::Camera>();
     
-    data->portNum = ::Gameplay::CurrentPortCount++;
+    data->portNum = ::Game::CurrentPortCount++;
 
     std::unique_ptr<Player> humanPlayer = std::make_unique<HumanPlayer>();
     auto playerResult = players::Players.insert(

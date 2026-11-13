@@ -2,9 +2,9 @@
   "conf": {
     "audioFreq": 22050,
     "clearColor": [
-      0.0,
-      0.0,
-      0.0,
+      0.30927836894989014,
+      0.17695824801921844,
+      0.17695824801921844,
       1.0
     ],
     "doClearColor": true,
@@ -22,8 +22,8 @@
     "interpolatePhysicsTransforms": true,
     "layers2D": [
       {
-        "blender": 0,
-        "depthCompare": false,
+        "blender": 5242944,
+        "depthCompare": true,
         "depthWrite": false,
         "fog": false,
         "fogColor": [
@@ -96,10 +96,10 @@
     ],
     "name": "CharSelect",
     "physicsTickRate": 15,
-    "positionSolverIterations": 6,
+    "positionSolverIterations": 2,
     "renderPipeline": 0,
     "renderScale": 100.0,
-    "velocitySolverIterations": 7
+    "velocitySolverIterations": 3
   },
   "graph": {
     "children": [
@@ -159,8 +159,8 @@
         ],
         "propOverrides": {
           "11272843812465326562": "1:0.999999,1.000000,0.999999",
-          "13911321452997764027": "1:0.000000,0.450000,2.025000",
-          "9467563534403475754": "0:0.000000,0.000000,0.000000,0.000000"
+          "13911321452997764027": "1:0.000000,0.500000,2.000000",
+          "9467563534403475754": "0:45.000000,0.000000,0.000000,0.000000"
         },
         "proportionalScale": false,
         "rot": [
@@ -188,7 +188,7 @@
                 1.0,
                 1.0,
                 1.0,
-                0.0
+                1.0
               ],
               "index": 0,
               "size": 40.959999084472656,
@@ -222,6 +222,75 @@
         ],
         "selectable": true,
         "uuid": 2006144818,
+        "uuidPrefab": 0,
+        "visMask": 1
+      },
+      {
+        "children": [],
+        "components": [
+          {
+            "data": {
+              "culling": false,
+              "layerIdx": 0,
+              "material": {
+                "depth": 0,
+                "env": [
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "fresnel": 0,
+                "fresnelColor": [
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "lighting": false,
+                "prim": [
+                  0.0,
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "setDepth": false,
+                "setEnv": false,
+                "setFresnel": false,
+                "setLighting": false,
+                "setPrim": false
+              },
+              "meshFilter": "",
+              "model": 365454121363530876
+            },
+            "enabled": true,
+            "id": 1,
+            "name": "Model (Static)",
+            "uuid": 15703944525319358592
+          }
+        ],
+        "enabled": true,
+        "name": "New Object",
+        "pos": [
+          0.0,
+          -0.375,
+          0.0
+        ],
+        "propOverrides": {},
+        "proportionalScale": false,
+        "rot": [
+          0.7071068286895752,
+          0.0,
+          0.0,
+          0.7071067094802856
+        ],
+        "scale": [
+          0.5,
+          0.4999987483024597,
+          0.09999869763851166
+        ],
+        "selectable": true,
+        "uuid": 3209827240,
         "uuidPrefab": 0,
         "visMask": 1
       }

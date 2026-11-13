@@ -200,6 +200,7 @@ rdpq_sprite_blit(data->bgSpr.ptr, 30, data->yBuffer, &bgParm);
 
       if(data->Xselected == 1) {
       players::portCount = data->selected + 1;
+      
         data->shouldOpen = 1;
 
         Scene &r = SceneManager::getCurrent();

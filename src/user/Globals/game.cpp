@@ -1,6 +1,6 @@
-#include "gameplay.h"
+#include "game.h"
 
-namespace Gameplay {
+namespace Game {
 
     // This value must correspond to the joypad_port_t enum during the entirety of gameplay.
     // This value is incremented by 1 for each user, so -1 is needed.

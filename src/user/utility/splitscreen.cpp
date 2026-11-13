@@ -1,6 +1,11 @@
 #include "splitscreen.h"
+
 namespace splitscreen {
-    quadrant CalculateDimensions(int step, int screens) {
+
+    uint8_t curScreenDivisions = 1;
+
+
+    quadrant calculateDimensions(int step, int screens) {
 
         int w = 640;
         int h = 480;
@@ -28,10 +33,24 @@ namespace splitscreen {
             y = h;
         } else if(step == 4) {
             x = w;
-            h = h;
+            y = h;
         }
 
         return quadrant{x, y, w ,h};
 
+    };
+
+    ///@brief Fits the quad to a given quad. This is used to rescale UI elements to
+    // parts of the UI.
+    ///@param relativeQuad the quad that will be fitted
+    ///@param bounds the quad that will be used to fit the relativeQuad to it.
+    quadrant fitQuadToBounds(quadrant relativeQuad, quadrant bounds) {
+
+        quadrant newQuad{};
+        newQuad.w = (relativeQuad.w / scrW) * bounds.w;
+        newQuad.h = (relativeQuad.h / scrH) * bounds.h;
+        newQuad.x = ((relativeQuad.x / scrW) * bounds.w) + bounds.x;
+        newQuad.x = ((relativeQuad.y / scrH) * bounds.h) + bounds.y;
+        return newQuad;
     }
 }
