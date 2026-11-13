@@ -7,8 +7,6 @@
     tex_main =
     tex_hands = 
     tex_head = 
-
-    prevanim_idle = "";
 ]
 
 [
@@ -20,8 +18,6 @@
     tex_main = 
     tex_hands =
     tex_head = 
-
-    prevanim_idle = 
 ]
 
 [
@@ -33,6 +29,4 @@
     tex_main = 
     tex_hands = 
     tex_head = 
-
-    prevanim_idle = 
 ]
