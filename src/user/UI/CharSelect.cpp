@@ -6,6 +6,8 @@
 
 #include "utility/splitscreen.h"
 
+#include <utility>
+
 namespace UI {
 
     CharSelect::CharSelect(P64::Object& linkedObject, P64::ObjectRef placeholdCamera)
@@ -20,10 +22,10 @@ namespace UI {
     }
 
     void CharSelect::update(P64::Object& obj, float deltaTime) {
-        for (size_t i = 0; i < this->deferredChars.size();) {
+        for (size_t i = 0; i < this->deferredChars.size(); i++) {
             P64::Object* object = P64::SceneManager::getCurrent().getObjectById(this->deferredChars[i]);
             if (!object) {
-                ++i;
+                
                 continue;
             }
             this->prevChars.emplace_back(
@@ -32,13 +34,11 @@ namespace UI {
                 splitscreen::calculateDimensions(this->currentPortCount, players::portCount),
                 this->placeholdCamera
             );
-            CharSelectCorner newChar = CharSelectCorner(this->currentPortCount, object);
-P64::User::panels.emplace_back(
-    std::make_unique<UI::CharSelectCorner>(this->currentPortCount, object)
-);
+            auto newChar = std::make_unique<CharSelectCorner>(this->currentPortCount, object);
             this->charSelectCorners.emplace_back(
-                newChar
+                newChar.get()
             );
+            P64::User::panels.emplace_back(std::move(newChar));
 
             this->deferredChars.erase(this->deferredChars.begin() + i);
             this->currentPortCount += 1;
@@ -49,16 +49,13 @@ P64::User::panels.emplace_back(
             prevChar.Update(deltaTime);
         }
 
-        for(UI::CharSelectCorner corner : this->charSelectCorners) {
-            corner.update(deltaTime);
+        for(UI::CharSelectCorner *corner : this->charSelectCorners) {
+            corner->update(deltaTime);
         }
     }
 
 
 
     void CharSelect::draw(float deltaTime) {
-        for(UI::CharSelectCorner& corner : this->charSelectCorners) {
-            //corner.draw(deltaTime);
-        }
     }
     };

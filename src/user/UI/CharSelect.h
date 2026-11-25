@@ -20,7 +20,7 @@ namespace UI {
 
     std::vector<UI::previewChar> prevChars = {};
 
-    std::vector<UI::CharSelectCorner> charSelectCorners = {};
+    std::vector<UI::CharSelectCorner*> charSelectCorners = {};
 
     int currentPortCount = 1;
 
