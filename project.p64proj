@@ -51,9 +51,9 @@
     "saveType": 0
   },
   "romName": "ZS64",
-  "sceneIdLastOpened": 2,
-  "sceneIdOnBoot": 1,
-  "sceneIdOnReset": 1,
+  "sceneIdLastOpened": 3,
+  "sceneIdOnBoot": 3,
+  "sceneIdOnReset": 3,
   "visLayer0": "World",
   "visLayer1": "WorldModel_1",
   "visLayer2": "WorldModel_2",

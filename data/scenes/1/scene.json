@@ -435,16 +435,6 @@
           },
           {
             "data": {
-              "args": {},
-              "script": 14555325958656699070
-            },
-            "enabled": true,
-            "id": 0,
-            "name": "Code",
-            "uuid": 11072177252988046059
-          },
-          {
-            "data": {
               "layerIdx": 0,
               "material": {
                 "depth": 0,
@@ -649,9 +639,9 @@
         "enabled": true,
         "name": "Camera",
         "pos": [
-          -4.106235027313232,
+          -4.099999904632568,
           1.100000023841858,
-          4.522436618804932
+          4.5
         ],
         "propOverrides": {},
         "proportionalScale": false,

@@ -1,0 +1,62 @@
+{
+  "obj": {
+    "children": [],
+    "components": [
+      {
+        "data": {
+          "centerOffset": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "collTypes": 255,
+          "floorMaxAngle": 0.785398006439209,
+          "floorSnapDistance": 0.30000001192092896,
+          "followFloor": true,
+          "gravity": 30.0,
+          "height": 2.0,
+          "maxFallSpeed": 55.0,
+          "maxSlides": 4,
+          "radius": 0.5,
+          "readMask": 11,
+          "stepHeight": 0.25,
+          "up": [
+            0.0,
+            1.0,
+            0.0
+          ]
+        },
+        "enabled": true,
+        "id": 12,
+        "name": "Character-Body",
+        "uuid": 3576189857490608496
+      }
+    ],
+    "enabled": true,
+    "name": "New Object",
+    "pos": [
+      0.0,
+      1.0,
+      0.0
+    ],
+    "propOverrides": {},
+    "proportionalScale": false,
+    "rot": [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ],
+    "scale": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "selectable": true,
+    "uuid": 2981700119,
+    "uuidPrefab": 0,
+    "visMask": 1
+  },
+  "uuid": 671189396,
+  "version": 2
+}
