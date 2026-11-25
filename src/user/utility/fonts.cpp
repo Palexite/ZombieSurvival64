@@ -17,9 +17,8 @@ namespace fonts {
         //fontMap.emplace(fontMap.end(), fontName, fontId);
     }
 
+    
     void setupFonts() {
-
-        
 
         rdpq_font_t *font = rdpq_font_load("rom:/fonts/RemingtonNoiseless_Large.font64");
 
@@ -30,6 +29,9 @@ namespace fonts {
         rdpq_fontstyle_t outlineStyle = {};
         outlineStyle.color = RGBA16(0, 0, 0, 1);
 
+        rdpq_fontstyle_t Locked = {};
+        Locked.color = RGBA32(255, 255, 255, 125);
+
         rdpq_font_style(font, 0, &normal);
         rdpq_font_style(font, 1, &outlineStyle);
         rdpq_text_register_font(4, font);
@@ -37,19 +39,22 @@ namespace fonts {
 
         font = rdpq_font_load("rom:/fonts/RemingtonNoiseless_Med.font64");
         rdpq_font_style(font, 0, &normal);
-        rdpq_font_style(font, 1, &outlineStyle);
+            rdpq_font_style(font, 1, &outlineStyle);
         rdpq_text_register_font(3, font);
 
 
             font = rdpq_font_load("rom:/fonts/RemingtonNoiseless_Small.font64");
         rdpq_font_style(font, 0, &normal);
         rdpq_font_style(font, 1, &outlineStyle);
+        rdpq_font_style(font, 2, &Locked);
+        
         rdpq_text_register_font(2, font);
 
 
             font = rdpq_font_load("rom:/fonts/RemingtonNoiseless_Mini.font64");
         rdpq_font_style(font, 0, &normal);
         rdpq_font_style(font, 1, &outlineStyle);
+        rdpq_font_style(font, 2, &Locked);
         rdpq_text_register_font(1, font);
 
     std::vector<uint8_t> fontsBySize{

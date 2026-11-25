@@ -42,9 +42,9 @@ namespace UI {
 
             if (P64::Object* placeholderCamera = CamToDestroy.get()) {
                 placeholderCamera->setEnabled(false);
-                debugf("Preview camera initialized; placeholder disabled\n");
+               // debugf("Preview camera initialized; placeholder disabled\n");
             } else {
-                debugf("Preview camera initialized, but placeholder camera is missing\n");
+               // debugf("Preview camera initialized, but placeholder camera is missing\n");
             }
             camInitialized = true;
         }

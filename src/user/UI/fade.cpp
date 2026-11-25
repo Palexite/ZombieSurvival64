@@ -2,7 +2,6 @@
 #include <algorithm>
 #include "../../p64/assetTable.h"
 #include <libdragon.h>
-#include "math.h"
 #include "fade.h"
 
 namespace UI {

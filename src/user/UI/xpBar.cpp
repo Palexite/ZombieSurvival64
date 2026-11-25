@@ -52,7 +52,7 @@ namespace UI {
         rdpq_set_prim_color(RGBA32(64, 192, 96, 255));
         rdpq_sprite_blit(gradSpr, bounds.x, bounds.y, &progressBarParms);
         rdpq_set_prim_color(RGBA32(255, 255, 255, 255));
-        rdpq_text_printf(&TEXT_INDICATOR, fontId, bounds.x, bounds.y, "Lvl %d // R.Lvl %" PRIu64, pData.level, pData.remortLevel);
+        rdpq_text_printf(NULL, fontId, bounds.x, bounds.y, "Lvl %d // R.Lvl %" PRIu64, pData.level, pData.remortLevel);
 
     }
 
