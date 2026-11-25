@@ -7,7 +7,7 @@ namespace players {
     //
     std::vector<playerPref> playerPreferences{};
 
-    // key is the object Id, pointer is the class object that can be either human or zombie
+    // key is the object Id, pointer is the class object
     std::map<uint32_t, std::unique_ptr<Player>> Players{};
 
     // The total number of ports a player has selected for this game.

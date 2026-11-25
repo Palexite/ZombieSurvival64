@@ -24,11 +24,6 @@ namespace P64::Script::CD3F67733C77127D
     };
 
   P64_DATA(
-    // For UI and splitscreen
-    float ScreenW = 640;
-    float ScreenH = 480;
-    float ScreenX = 0;
-    float ScreenY = 0;
     // 1 - CameraSpawned,
     
     uint8_t setupFlags = 0;
@@ -45,29 +40,6 @@ namespace P64::Script::CD3F67733C77127D
 
   void init(Object& obj, Data *data)
   { 
-
-    data->animModel = obj.getComponent<Comp::AnimModel>(0);
-    data->charBody = obj.getComponent<Comp::CharBody>();
-    data->camera = obj.getComponent<Comp::Camera>();
-    
-    data->portNum = ::Game::CurrentPortCount++;
-
-    std::unique_ptr<Player> humanPlayer = std::make_unique<HumanPlayer>();
-    auto playerResult = players::Players.insert(
-      std::make_pair(obj.id, std::move(humanPlayer)));
-    data->localPlayer = &playerResult.first->second;
-
-// Setting up screen space for us depending on our port and the number of ports that are reserved.
-    if(players::portCount == 1) {
-      data->ScreenW = 640;
-      data->ScreenH = 480;
-    } else if(players::portCount == 2) {
-      data->ScreenW = 320;
-      data->ScreenH = 480;
-    } else if(players::portCount == 3 || players::portCount == 4) {
-      data->ScreenH = 240;
-      data->ScreenW = 320;
-    }
 
   }
 
