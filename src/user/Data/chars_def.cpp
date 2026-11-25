@@ -12,7 +12,7 @@ namespace data::characters {
 
         std::string content = data::readtxt("rom:/data/chars.txt");
         
-        for(std::string line : data::getLinesFromString(content)) {
+
 
             for( std::string line : data::getLinesFromString(content)) {
                 if (!line.empty() && line.back() == '\r') {
@@ -45,27 +45,13 @@ namespace data::characters {
                 if(key == "desc") {
                     currentDef.desc = value;
                 } else
-                if(key == "model_main") {
-                    currentDef.model_main = value;
+                if(key == "previewasset") {
+                    currentDef.previewAsset = value;
                 } else
-                if(key == "model_hands") {
-                    currentDef.model_hands = value;
-                } else
-                if(key == "model_head") {
-                    currentDef.model_hands = value;
-                } else
-                if(key == "tex_main") {
-                    currentDef.tex_main = value;
-                } else
-                if(key == "tex_hands") {
-                    currentDef.tex_hands = value;
-                } else
-                if(key == "tex_head") {
-                    currentDef.tex_head = value;
-                }
-
+                if(key == "gameasset") {
+                    currentDef.gameAsset = value;
                 }
             }
-        }
+            }
     }
 }
