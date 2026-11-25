@@ -2,8 +2,9 @@
 #include "script/userScript.h"
 #include "scene/sceneManager.h"
 #include "global.h"
+#include "globals/game.h"
 
-
+#include "Gamemodes/gamemode.h"
 
 #include "utility/fonts.h"
 #include "UI/Panel.h"
@@ -11,12 +12,13 @@
 namespace P64::User {
 
 
-
+  float deltaTime = 0;
   uint8_t flags = 0;
   // 1 = Human, 0 = Zombie
   uint8_t portTeam = 1;
   uint8_t mapSelected = 0;
   std::vector<std::unique_ptr<UI::Panel>> panels = {};
+
 }
 
 
@@ -43,6 +45,9 @@ namespace P64::GlobalScript::C6EFF0964420055D
   void onScenePostLoad()
   {
     // right after a new scene was loaded, but before any update has happened yet
+    if(Game::currentGamemode != nullptr) {
+        Game::currentGamemode->onGameStart();
+    }
   }
 
   void onScenePreUnload()
@@ -81,14 +86,20 @@ namespace P64::GlobalScript::C6EFF0964420055D
     // called once per frame per camera.
     // this is done after all objects are drawn for the specific camera.
     // The default 3D layer is active and must be restored if changed.
-    DrawLayer::useDefault();
     
   }
 
   void onSceneDraw2D()
   {
+    P64::User::deltaTime = P64::User::deltaTime - P64::SceneManager::getCurrent().ticksGlobalDraw;
+      rdpq_mode_blender(RDPQ_BLENDER_MULTIPLY);
+      rdpq_mode_combiner(RDPQ_COMBINER_TEX_FLAT);
     for( auto& panel : P64::User::panels) {
-      panel->draw(0);
+      panel->draw(0.01);
+    }
+
+    if(P64::User::currentGamemode != nullptr) {
+        P64::User::currentGamemode->onDraw2D(0.01);
     }
     
     // called once per frame after all cameras/objects are drawn.
