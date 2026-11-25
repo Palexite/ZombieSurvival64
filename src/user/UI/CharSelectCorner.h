@@ -6,12 +6,16 @@
 #include "scene/sceneManager.h"
 #include "scene/camera.h"
 #include "assets/assetManager.h"
+
 #include "colorPicker.h"
+#include "SwitchPlate.h"
 
 #include "Panel.h"
 
 #include "utility/math.h"
 #include "utility/controllerpak.h"
+
+#include "data/chars_def.h"
 
 #include <string>
 
@@ -20,6 +24,7 @@ class CharSelectCorner : public UI::Panel{
 
     float colorHuePick = 0;
     float colorLightPick = 0;
+
     P64::Camera* camera = nullptr;
 
     public:
@@ -30,6 +35,9 @@ class CharSelectCorner : public UI::Panel{
     int portId = 1;
 
     UI::ColorPicker *colorPicker = nullptr;
+    UI::SwitchPlate* charSelectPlate = nullptr;
+
+
     PlayerData* pData = nullptr;
 
     CharSelectCorner(int portId, P64::Object* previewCharacter);
@@ -39,6 +47,18 @@ class CharSelectCorner : public UI::Panel{
       void ChangeCharacter(int charId);
 
       private:
+
+        // Camera interpolation variables
+
+        float cameraFOV_Cur;
+        float cameraFOV_Delta;
+        float cameraFOV_Final;
+
+        fm_vec3_t cameraPos_Cur;
+        float cameraPos_Delta;
+        fm_vec3_t cameraPos_Final;
+
+
       uint16_t smallFontID;
 };
 }
