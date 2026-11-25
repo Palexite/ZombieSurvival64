@@ -13,7 +13,7 @@ namespace data::maps {
     std::string desc;
     std::string icon;
     std::string category;
-        int scene = 1;
+        int scene = 3;
         int difficulty = 1;
         int size = 1;
         

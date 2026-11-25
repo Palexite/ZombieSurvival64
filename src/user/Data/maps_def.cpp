@@ -72,6 +72,8 @@ std::vector<maps::mapDef> mapsDefined{};
                     currentDef.category = value;
                 } else if(key == "date") {
                     currentDef.date = value;
+                } else if(key == "scene") {
+                    currentDef.scene = std::stoi(value);
                 }
                 
 
