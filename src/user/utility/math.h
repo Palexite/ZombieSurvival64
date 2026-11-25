@@ -4,6 +4,21 @@
 #include "scene/sceneManager.h"
 #define DELTATIME_SCALED = sceneManager::getDeltaTime() * sceneManager::getTimeScale();
 
+
+    struct floatlerpData {
+        float cur;
+        float final;
+        float delta;
+        float dur;
+    };
+
+    struct vec3lerpData {
+        fm_vec3_t cur;
+        fm_vec3_t final;
+        float delta;
+        float dur;
+    };
+
     struct quadrant {
         float x;
         float y;
