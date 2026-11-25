@@ -53,11 +53,6 @@ namespace P64::Script::C7E952F114A8850F
 
   }
 
-  void destroy(Object& obj, Data *data)
-  {
-    // clean-up, this is called when the object gets deleted
-  }
-
   void update(Object& obj, Data *data, float deltaTime)
   {
     if(data->shouldOpen == 0) {
@@ -107,11 +102,6 @@ AudioManager::play2D("sfx/ui/hover1.wav64"_asset);
 }
 
     // this is called once every frame, put your main logic here
-  }
-
-  void fixedUpdate(Object& obj, Data *data, float fixedDeltaTime)
-  {
-    // this is called on the fixed physics timestep before collision/physics are stepped
   }
 
   void draw(Object& obj, Data *data, float deltaTime)
@@ -185,15 +175,10 @@ rdpq_sprite_blit(data->bgSpr.ptr, 30, data->yBuffer, &bgParm);
 
   void onEvent(Object& obj, Data *data, const ObjectEvent &event)
   {
-    // generic events an object can receive
     switch(event.type)
     {
-      case EVENT_TYPE_READY: // object is fully initialized, no update call has happened yet
-      break;
-      case EVENT_TYPE_ENABLE: // object got enabled
+      case EVENT_TYPE_ENABLE:
             data->shouldOpen = 0;
-      break;
-      case EVENT_TYPE_DISABLE: // object got disabled
       break;
       case EVENT_TYPE_CUSTOM_START:
       
@@ -202,12 +187,10 @@ rdpq_sprite_blit(data->bgSpr.ptr, 30, data->yBuffer, &bgParm);
       players::portCount = data->selected + 1;
       
         data->shouldOpen = 1;
-
-        Scene &r = SceneManager::getCurrent();
         Object *mSel = data->mapSelect.get();
 
           mSel->setEnabled(true);
-            SceneManager::getCurrent().sendEvent(data->introScript.id, obj.id, EVENT_TYPE_CUSTOM_START, 1);
+          SceneManager::getCurrent().sendEvent(data->introScript.id, obj.id, EVENT_TYPE_CUSTOM_START, 1);
       } else {
         data->shouldOpen = 1;
         data->mainMenu.get()->setEnabled(true);
@@ -215,12 +198,7 @@ rdpq_sprite_blit(data->bgSpr.ptr, 30, data->yBuffer, &bgParm);
       
       break;
 
-      // you can check for your own custom types here too
-    }
-  }
 
-  void onCollision(Object& obj, Data *data, const Coll::CollEvent& event)
-  {
-    // collision callbacks, only used if any collider is attached
+    }
   }
 }

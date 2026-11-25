@@ -129,7 +129,7 @@ namespace P64::Script::CE723306229A98AC
       rdpq_text_printf(&TEXT_TITLE, 2, 180, 48, "MAP SELECT");
 
     std::vector<UIItem> uiItems = {};
-
+    
     for (const data::maps::mapDef& map : data::maps::mapsDefined) {
       uiItems.push_back({
         map.icon.c_str(),
